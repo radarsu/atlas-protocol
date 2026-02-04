@@ -32,12 +32,12 @@
         },
         {
             "@type": "PropertyValue",
-            "name": "preferredReadNodes",
+            "name": "readNodes",
             "value": "https://node.example.com"
         },
         {
             "@type": "PropertyValue",
-            "name": "preferredWriteNodes",
+            "name": "writeNodes",
             "value": "https://node.example.com"
         },
         {
