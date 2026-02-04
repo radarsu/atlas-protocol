@@ -1,20 +1,21 @@
-# Atlas Protocol (REST) - Draft
+# Atlas Protocol (REST)
 
-This document defines a REST interface for exchanging Envelopes between Nodes. Nodes may implement any subset of endpoints.
+In a headless network, strict security is the primary guarantee of network health. By enforcing cryptographic signatures and Proof-of-Work (PoW) tiering at the edge, Atlas prevents resource exhaustion (DDoS) and mitigates sybil attacks. This "strict-by-default" architecture allows the network to remain open and performant without relying on central gatekeepers or complex consensus overhead.
+
+Therefore, Nodes MAY implement any subset of endpoints, but MUST adhere to the security standards defined below to participate in the gossip pool.
 
 ## Protocol Headers
 
-4. Trust roots + transitive signatures (PGP-like web)
+**X-Atlas-Public-Key and X-Atlas-Signature**
 
-### X-Atlas-Public-Key
+All requests MUST include the client's public key and signature. Nodes MUST reject public keys which do not start with: **cit** (citizen), **tita** (titan), **atlas** (atlas).
 
-GET requests MUST include the client’s public key. Nodes SHOULD reject public keys which are not in a format: **cit** (citizen), **tita** (titan), **atlas** (atlas). The format is inferred from the value (by Proof of Work prefix).
+**Header**: `X-Atlas-Public-Key: <Public key of sender (not necessarily author)>`
+**Header**: `X-Atlas-Signature: t=<Method|Current Unix timestamp in milliseconds>|Path; s=<Sender signature>` (example: GET|1707052800000|envelopes?where=...1707052800000)
 
-**Header**: `X-Atlas-Public-Key: <Public key>`
-
-**Applies to**: All GET endpoints (e.g. `GET /envelopes`, `GET /envelopes/:hash`, `GET /config`, `GET /config/preferences`, `GET /config/node`, `GET /nodes/self`, `GET /nodes/known`).
-
-Clients that omit this header on GET requests MAY receive `401 Unauthorized` or restricted/empty results, depending on Node policy.
+Clients that omit this header on GET requests SHOULD receive `401 Unauthorized`.
+Clients whose timestamp dift is larger than 5 minutes SHOULD be rejected.
+For unauthorized users, there should be a hardcoded in-app private/public key used.
 
 ### X-Atlas-Knowledge-Share
 
@@ -42,7 +43,7 @@ Recipients SHOULD react to header by sharing their known nodes via POST to the a
 ```json
 {
   "hash": "<CIDv1 of canonical JSON bytes (raw + sha2-256; IPFS compliant)>",
-  "signature": "<Ed25519 signature on data>",
+  "signature": "<Public key matching Ed25519 signature>",
   "data": "<Structured data JSON>",
   "authorPublicKey": "<Public key of Envelope author>",
   "createdAt": "<ISO-8601 date of accepting Envelope by Node>",

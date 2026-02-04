@@ -16,6 +16,7 @@ The system separates 5 elements:
 
 - **Open** - Allow configuration of Nodes to pull data from, all data MUST be public and exportable.
 - **Fair** - Communicate with all Nodes equally, in accordance with their transparent local policy.
+- **Resilient** — Nodes MUST reject unverified or anonymous traffic to protect the network's collective resources and maintain high-signal discovery.
 
 ## Atlas-compliant systems SHOULD be:
 

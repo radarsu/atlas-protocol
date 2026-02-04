@@ -103,8 +103,8 @@ Response:
 
 On the next request, a rejected Client (if the user is trusted by any of the listed authorities) SHOULD include:
 
-- **Header**: `X-Atlas-PublicKey: <Public key>`
-- **Header**: `X-Atlas-Signature: <Signature over challenge verifiable against X-Atlas-PublicKey>`
+- **Header**: `X-Atlas-Public-Key: <Public key>`
+- **Header**: `X-Atlas-Signature: <Signature over challenge verifiable against X-Atlas-Public-Key>`
 - **Header**: `X-Atlas-ClaimReview: <base54(Canonical envelope JSON)>`
 
 Example:
@@ -112,7 +112,7 @@ Example:
 ```
 GET /envelopes
 Request:
-  X-Atlas-PublicKey: <Public key>
+  X-Atlas-Public-Key: <Public key>
   X-Atlas-Signature: <Signature over challenge>
   X-Atlas-Trusted-By: https://other-authority.example.com
   X-Atlas-ClaimReview: { Envelope with ClaimReview }
@@ -122,11 +122,11 @@ Then Node verifies:
 
 - **Challenge validity**: if `X-Atlas-Expires` has not expired.
 - **Authority selection**: if `X-Atlas-Trusted-By` is one of the URLs listed in `X-Atlas-Authorities` (trusted by node).
-- **Signature validity**: `X-Atlas-Signature` is a valid signature by `X-Atlas-PublicKey` over the challenged bytes (`X-Atlas-Challenge` value).
+- **Signature validity**: `X-Atlas-Signature` is a valid signature by `X-Atlas-Public-Key` over the challenged bytes (`X-Atlas-Challenge` value).
 
 If verification fails, the Node rejects the request with `401 Unauthorized` and include a new `X-Atlas-Challenge`.
 
-If verification passes, the Node verifies the signature on the ClaimReview against the public key of the trusted authority indicated by `X-Atlas-Trusted-By`, ensure the ClaimReview is time-valid (`validUntil` in the future and `datePublished` not in the future relative to Node time), and ensure that the ClaimReview asserts trust for the provided `X-Atlas-PublicKey`.
+If verification passes, the Node verifies the signature on the ClaimReview against the public key of the trusted authority indicated by `X-Atlas-Trusted-By`, ensure the ClaimReview is time-valid (`validUntil` in the future and `datePublished` not in the future relative to Node time), and ensure that the ClaimReview asserts trust for the provided `X-Atlas-Public-Key`.
 
 If all checks succeed, the Node accepts the request.
 
