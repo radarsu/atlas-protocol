@@ -1,4 +1,4 @@
-# Preferences
+# Atlas - Preferences
 
 **Client apps** MUST respect user preferences, which can be obtained by `GET /envelopes` request with proper filter. Only a Statement with latest dateCreated property MUST be respected.
 

@@ -1,42 +1,6 @@
-# Atlas Protocol (REST)
+# Atlas - Requests
 
-In a headless network, strict security is the primary guarantee of network health. By enforcing cryptographic signatures and Proof-of-Work (PoW) tiering at the edge, Atlas prevents resource exhaustion (DDoS) and mitigates sybil attacks. This "strict-by-default" architecture allows the network to remain open and performant without relying on central gatekeepers or complex consensus overhead.
-
-Therefore, Nodes MAY implement any subset of endpoints, but MUST adhere to the security standards defined below to participate in the gossip pool.
-
-## Protocol Headers
-
-**X-Atlas-Public-Key and X-Atlas-Signature**
-
-All requests MUST include the client's public key and signature. Nodes MUST reject public keys which do not start with conventional string:
-- **cit** (citizen; weak PoW; READ-only access limited to `GET` requests)
-- **tita** (titan; medium PoW)
-- **atlas** (atlas; strong PoW)
-
-**Header**: `X-Atlas-Public-Key: <Public key of sender (not necessarily author)>`
-**Header**: `X-Atlas-Signature: t=<Method|Current Unix timestamp in milliseconds>|Path; s=<Sender signature>` (example: GET|1707052800000|envelopes?where=...1707052800000)
-
-Clients that omit any of these headers MUST receive `401 Unauthorized`.
-Clients whose timestamp drift is larger than 5 minutes SHOULD be rejected.
-
-### X-Atlas-Knowledge-Share
-
-Nodes MAY periodically ask Clients for help with network discovery, by responding with a header.
-
-**Header**: `X-Atlas-Knowledge-Share: region=EU; datatypes=ClaimReview,Person`
-
-**Example Behavior**:
-- Send once per hour on any response (first request within the hour window)
-- Applies to all endpoints (`/envelopes/*`, `/nodes/*`)
-
-```
-GET /envelopes?where={"authorPublicKey":"abc123"}
-Response:
-  X-Atlas-Knowledge-Share: region=EU; datatypes=ClaimReview,Person
-  [{ "hash": "...", ... }]
-```
-
-Recipients SHOULD react to header by sharing their known nodes via POST to the advertised endpoint (e.g., `POST /nodes/announcements`).
+Nodes MAY implement any subset of endpoints, but MUST adhere to the security standards defined below to participate in the gossip pool.
 
 ## Storage
 
