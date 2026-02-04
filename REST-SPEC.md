@@ -6,6 +6,16 @@ This document defines a REST interface for exchanging Envelopes between Nodes. N
 
 4. Trust roots + transitive signatures (PGP-like web)
 
+### X-Atlas-Public-Key
+
+GET requests MUST include the client’s public key.
+
+**Header**: `X-Atlas-Public-Key: <Public key>`
+
+**Applies to**: All GET endpoints (e.g. `GET /envelopes`, `GET /envelopes/:hash`, `GET /config`, `GET /config/preferences`, `GET /config/node`, `GET /nodes/self`, `GET /nodes/known`).
+
+Clients that omit this header on GET requests MAY receive `401 Unauthorized` or restricted/empty results, depending on Node policy.
+
 ### X-Atlas-Knowledge-Share
 
 Nodes MAY periodically ask Clients for help with network discovery, by responding with a header.
@@ -24,59 +34,6 @@ Response:
 ```
 
 Recipients SHOULD react to header by sharing their known nodes via POST to the advertised endpoint (e.g., `POST /nodes/announcements`).
-
-## Configuration
-
-### Get Full Config
-
-`GET /config`
-
-Response: Full config object
-
-### Update Full Config
-
-`PUT /config`
-
-Request body: Full config object
-
-Response:
-```json
-{ "ok": true }
-```
-
-### Get Preferences
-
-`GET /config/preferences`
-
-Response: Preferences object
-
-### Update Preferences
-
-`PUT /config/preferences`
-
-Request body: Partial or full preferences object (merged with existing)
-
-Response:
-```json
-{ "ok": true }
-```
-
-### Get Node Config
-
-`GET /config/node`
-
-Response: Node config object
-
-### Update Node Config
-
-`PUT /config/node`
-
-Request body: Partial or full node config object (merged with existing)
-
-Response:
-```json
-{ "ok": true }
-```
 
 ## Storage
 
