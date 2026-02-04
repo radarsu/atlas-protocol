@@ -22,7 +22,7 @@ Atlas therefore accepts explicit, transparent semantic governance. By converging
 | Identity           | Public key                               | Public key             |
 | Object identity    | Event hash (version) + addressable slots | EntityId + hash        |
 | Mutable state      | Replaceable / addressable events         | Supersedes + entity    |
-| Stable document ID | `(pubkey, kind, d)`                      | IPFS-compliant has     |
+| Stable document ID | `(pubkey, kind, d)`                      | IPFS-compliant hash     |
 | History required   | No                                       | Optional / desirable   |
 | Fork handling      | Deterministic (newest wins locally)      | Explicit, policy-bound |
 
