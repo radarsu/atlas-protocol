@@ -8,11 +8,9 @@ This document defines a REST interface for exchanging Envelopes between Nodes. N
 
 ### X-Atlas-Public-Key
 
-GET requests MUST include the client’s public key.
+GET requests MUST include the client’s public key. Nodes SHOULD reject public keys which are not in a format: **cit** (citizen), **tita** (titan), **atlas** (atlas). The format is inferred from the value (by Proof of Work prefix).
 
 **Header**: `X-Atlas-Public-Key: <Public key>`
-
-**Accepted formats**: Nodes MUST accept public keys in at least one of: **cit**, **tita**, **atlas**. The format is inferred from the value (e.g. prefix or structure); clients SHOULD use the same format the Node advertises or that was used when registering.
 
 **Applies to**: All GET endpoints (e.g. `GET /envelopes`, `GET /envelopes/:hash`, `GET /config`, `GET /config/preferences`, `GET /config/node`, `GET /nodes/self`, `GET /nodes/known`).
 
