@@ -8,14 +8,16 @@ Therefore, Nodes MAY implement any subset of endpoints, but MUST adhere to the s
 
 **X-Atlas-Public-Key and X-Atlas-Signature**
 
-All requests MUST include the client's public key and signature. Nodes MUST reject public keys which do not start with: **cit** (citizen), **tita** (titan), **atlas** (atlas).
+All requests MUST include the client's public key and signature. Nodes MUST reject public keys which do not start with conventional string:
+- **cit** (citizen; weak PoW; READ-only access limited to `GET` requests)
+- **tita** (titan; medium PoW)
+- **atlas** (atlas; strong PoW)
 
 **Header**: `X-Atlas-Public-Key: <Public key of sender (not necessarily author)>`
 **Header**: `X-Atlas-Signature: t=<Method|Current Unix timestamp in milliseconds>|Path; s=<Sender signature>` (example: GET|1707052800000|envelopes?where=...1707052800000)
 
-Clients that omit this header on GET requests SHOULD receive `401 Unauthorized`.
-Clients whose timestamp dift is larger than 5 minutes SHOULD be rejected.
-For unauthorized users, there should be a hardcoded in-app private/public key used.
+Clients that omit any of these headers MUST receive `401 Unauthorized`.
+Clients whose timestamp drift is larger than 5 minutes SHOULD be rejected.
 
 ### X-Atlas-Knowledge-Share
 
