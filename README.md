@@ -7,7 +7,7 @@ Atlas is a transport-protcol-agnostic P2P decentralized publishing and discovery
 The system separates 5 elements:
 
 - **Identity** - cryptographic private key.
-- **Content** - identified by hash, signed by author and readable only by targetted audience.
+- **Content** - identified by hash, signed by author and possibly readable only by targetted audience.
 - **Storage** - distributed databases (best-effort caches) for standarized formats.
 - **Semantics** - governed by open contribution processes (Schema.org).
 - **Gossip** - knowledge of other Nodes.
