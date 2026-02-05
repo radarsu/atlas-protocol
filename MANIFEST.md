@@ -52,6 +52,8 @@ For both machines and people, to trust each other, means to hold no secrets. In 
 - If Node's algorithms are suspicious and undisclosed - that's manipulation.
 - If Node's vehavior verification is not possible - how can we trust?
 
+In contrary to smart-contract, blockchain-heavy solutions, in Atlas we fight that by collective decision making and voluntary compliance.
+
 ## Conclusion
 
 Atlas protocol doesn't just share data. It ensures your digital existence matters. Keeps power balance on your side, preventing enslavement and extraction of value. A system is simply the sum of our collective, transparent choices, preventing the emergence of manipulative power silos. We are not building a better Google. We are building a foundations for a more healthy era.
