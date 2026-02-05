@@ -41,13 +41,16 @@ The Web of Trust creates a self-reinforcing loop that protects the network's int
 4.  **Convergence:** Nodes prioritize the storage of high-trust data to remain relevant and useful to the community.
 5.  **Pruning:** Malicious, unverified, or low-signal traffic is rejected at the Node level (**Resilience**), starving bad actors of the network's collective resources.
 
-## Importance of Open Knowledge and Transparency
+## On the Importance of Open Knowledge and Transparency
 
 Atlas seeks to connect humanity more than ever. Though, this is not in our human nature, to trust thousands, millions of other people. To wish good for them, to stay kind and cooperative to strangers. We seek power, we seek to be better and we naturally trust only a few. That's what we are. If you discovered a billion dollar secret of building houses 10x better and faster, would you tell your brother? Would you tell a stranger?
 
 This is primarily because we cannot communicate and share ideas with other people 24/7, 100 times a day. Therefore, verification of other people, their intents, behavior - is a time and resources consuming process, so we reasonably assume malicious actors are there, somewhere. But the machines don't have this constraint. At least - not at a magnitude of 10-100. They are able to make a jump from our humane 10-100 connections to thousands or even millions verified, trusted connections between them. And, when they verify, they are strict, predictably following set of rules and giving deterministic result.
 
-For both machines and people, to trust each other, means to hold no secrets. In Web of Trust, machines must adhere and hold no secrets affecting their output behavior. Their data - accessible, algorithms - fully transparent, verification - possible by anybody. "If you're behaving weird, because you're cheating on me, just fkin tell me"
+For both machines and people, to trust each other, means to hold no secrets. In Web of Trust, machines must adhere and hold no secrets affecting their output behavior. Their data - accessible, algorithms - fully transparent, verification - possible by anybody. These are principles we must enforce as the Web of Trust.
+- If Node's data is inaccessible - that's egoistic.
+- If Node's algorithms are suspicious and undisclosed - that's manipulation.
+- If Node's vehavior verification is not possible - how can we trust?
 
 ## Conclusion
 
