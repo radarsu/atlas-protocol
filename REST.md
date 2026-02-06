@@ -15,7 +15,7 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
   "createdAt": "<ISO-8601 date of accepting Envelope by Node>",
   // Optional
   "supersedes": "<Envelope that it intends to override>",
-  "delegationProof": "<Delegated public key, scopes and limits signed with root key to verify>",
+  "delegationProof": "<Permit Envelope>", // Check AUTH.md
   "recipientKeyId": "<BLAKE3 hash of recipient public key>",
 }
 ```

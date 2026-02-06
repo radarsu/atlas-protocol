@@ -25,11 +25,11 @@
 
 ### Client-app authorization
 
-1. Unauthorized user chooses his **trusted service** button and gets redirected to **trusted client app** (where he is authorized), on `/atlas/delegate?url=https://app.example.com&p=[{"@type": "CreateAction","object": {"@type": "SocialMediaPosting"}}]`.
+1. Unauthorized user chooses his **trusted service** button and gets redirected to **trusted client app** (where he is authorized), to `/atlas/delegate?url=https://app.example.com&p=[{"@type": "CreateAction","object": {"@type": "SocialMediaPosting"}}]`.
 
 2. In **trusted client app** user sets time scope (validFrom and validUntil) and obtains short-lived, secret url to copy from **trusted service**.
 
-3. **Trusted service** uses authorization material from user to prepare (not yet publish) delegated private key Permit envelope:
+3. **Trusted service** uses authorization material from user to prepare (not yet publish) delegated private key Permit Envelope:
 
 ```json
 {
