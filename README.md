@@ -3,7 +3,7 @@
 ## Overview
 
 Atlas is a transport-protcol-agnostic P2P decentralized publishing and discovery protocol where **users own their data** and **govern it to converge into structured, interoperable databases**, empowering users and developers.
-<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/df1bdd5b-f114-4deb-8011-d42ec7372009" />
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/3f8201da-63b8-4c78-86c1-71e05fd77c5f" />
 
 The system separates 5 elements:
 
