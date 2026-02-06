@@ -1,4 +1,4 @@
-# Atlas - Requests
+# Atlas - Rest
 
 Nodes MAY implement any subset of endpoints, but MUST adhere to the security standards defined below to participate in the gossip pool.
 
@@ -12,6 +12,8 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
   "signature": "<Public key matching Ed25519 signature>",
   "data": "<Structured data JSON>",
   "authorPublicKey": "<Public key of Envelope author>",
+  "delegationProof": "<Delegated public key, scopes and limits signed with root key to verify>",
+
   "createdAt": "<ISO-8601 date of accepting Envelope by Node>",
   "recipientKeyId": "<BLAKE3 hash of recipient public key>"
 }
