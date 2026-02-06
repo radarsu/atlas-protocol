@@ -1,4 +1,4 @@
-# Atlas — The world in Your hands
+# Atlas — Your data, your rules
 
 ## Overview
 
