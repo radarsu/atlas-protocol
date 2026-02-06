@@ -1,4 +1,4 @@
-# Atlas — Publishing & Discovery Without Platforms
+# Atlas — The world in Your hands
 
 ## Overview
 
