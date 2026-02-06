@@ -9,13 +9,14 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
 ```json
 {
   "hash": "<CIDv1 of canonical JSON bytes (raw + sha2-256; IPFS compliant)>",
-  "signature": "<Public key matching Ed25519 signature>",
   "data": "<Structured data JSON>",
+  "signature": "<Signature on data matching>",
   "authorPublicKey": "<Public key of Envelope author>",
-  "delegationProof": "<Delegated public key, scopes and limits signed with root key to verify>",
-
   "createdAt": "<ISO-8601 date of accepting Envelope by Node>",
-  "recipientKeyId": "<BLAKE3 hash of recipient public key>"
+  // Optional
+  "supersedes": "<Envelope that it intends to override>",
+  "delegationProof": "<Delegated public key, scopes and limits signed with root key to verify>",
+  "recipientKeyId": "<BLAKE3 hash of recipient public key>",
 }
 ```
 
