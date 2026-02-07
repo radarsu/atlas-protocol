@@ -18,13 +18,9 @@ In Atlas we accept Schema.org as a source of our truth, taking it as a common "s
 
 ## Side-by-side Comparisons
 
-**Atlas's View** - Meaning should be getting baked into the protocol via structured Envelopes and social governance.
-
 **Nostr's View** - Meaning is "emergent.". If an app is successful, its kind and tag structure becomes the de facto standard (i.e., kind: 1 for short notes).
 
-**Nostr is like email (SMTP):** It moves text from A to B. It’s great for freedom, but if you send a "spreadsheet" via email, the recipient needs the right software (the same NIP) to open it.
-
-**Atlas is more like a Distributed Database:** It ensures that not only did the message arrive, but that the data means exactly what it was intended to mean across all Nodes.
+**Atlas's View** - Meaning should be getting baked into the protocol via structured Envelopes and social governance.
 
 ### Core Goal
 
