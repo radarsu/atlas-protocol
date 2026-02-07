@@ -6,9 +6,7 @@ Atlas starts from the observation that client-level power concentration is unavo
 
 Atlas therefore accepts explicit, transparent semantic governance. By converging on shared, versioned schemas, Atlas allows queries and aggregation logic to be portable across clients. This shifts power from opaque client implementations to auditable, forkable, collectively governed semantic standards, enabling interoperable personal databases and more stable user experience across applications — at the cost of increased coordination pressure.
 
-Nostr solves the "Who owns my account?" problem, but it does not solve "Do these two apps actually work together?".
-
-## The "NIP-Soup" Problem (Reinventing Wheels)
+## The "NIP-Soup" Problem
 
 In Nostr, if you want to build a new feature (e.g., a "Task Manager" or "Medical Record"), you have two choices:
 1. **The Slow Way:** Propose a new NIP (Nostr Implementation Possibility), argue for months on GitHub, and hope other devs implement it.
@@ -17,7 +15,11 @@ In Nostr, if you want to build a new feature (e.g., a "Task Manager" or "Medical
 In Atlas we accept Schema.org as a source of our truth, taking it as a common "skeleton" of semantic meanings. The interpretations might differ. Compatibility might be limited, but we have solid foundations to start from. And as most of coders already use AI agents - accidential convergance becomes desired and likely. This is important because non-interoperable data and custom data structures is what effectively causes data lock-ins and user loosing power.
 
 ## Private key and convenience
-In Nostr
+In Nostr, security is simple and delegated keys approach are an afterthrough. That ultimately will lead to high risk of losing a key and therefore - losing your identity.
+
+In Atlas, mechanisms to generate scoped, time-limited delegated keys are baked into the protocol, as well as OIDC-like flow for keeping root private key safe and recoverable for casual users.
+
+## 
 
 ### Core Goal
 
