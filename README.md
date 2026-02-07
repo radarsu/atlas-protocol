@@ -1,5 +1,18 @@
 # Atlas — Your data, your rules
 
+## Table of contents
+
+| Document | Description |
+|----------|-------------|
+| [AUTH](AUTH.md) | Authentication |
+| [GOVERNANCE](GOVERNANCE.md) | Governance |
+| [MANIFEST](MANIFEST.md) | Manifest |
+| [NOSTR](NOSTR.md) | Nostr integration |
+| [PREFERENCES](PREFERENCES.md) | Preferences |
+| [REST](REST.md) | REST API |
+| [SECURITY](SECURITY.md) | Security |
+| [TYPES-OF-APPS](TYPES-OF-APPS.md) | Types of applications |
+
 ## Overview
 
 Atlas is a transport-protcol-agnostic P2P decentralized publishing and discovery protocol where **users own their data** and **govern it to converge into structured, interoperable databases**, empowering users and developers.

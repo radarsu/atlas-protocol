@@ -1,4 +1,4 @@
-# Atlas - Governane of Meaning
+# Atlas - Coordination of Meaning
 
 Atlas does not enforce global governance. Instead, it provides an opt-in coordination of meaning and interpretation through explicit, revocable configuration.
 
@@ -10,8 +10,8 @@ It's important to understand, that semantic anchor is not an enforcement authori
 
 - **Local Sovereignty** - Each node decides which interpretations it adopts. No policy is mandatory.
 - **Explicit Authority** - Any influence over shared interpretation is named, visible, and configurable.
-- **Cheap Exit** - Nodes can change or remove governance anchors at any time without penalty.
-- **Bounded Scope** - Governance affects interpretation and weighting, never protocol validity.
+- **Cheap Exit** - Nodes can change or remove semantic anchors at any time without penalty.
+- **Bounded Scope** - Semantic affects interpretation and weighting, never protocol validity.
 - **Forkability Over Enforcement** - Disagreement results in divergence, not coercion.
 - **Transparency Over Neutrality Claims** - All coordination of meaning is acknowledged as social and contextual.
 - **Scope Enforcement (Anti-Authority-Drift)** - Authority drift is prevented by hard technical boundaries, not convention.
