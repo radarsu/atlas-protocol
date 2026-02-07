@@ -24,3 +24,10 @@ Communicating with Centralized/Siloed Storages. All logic is server-side and pro
 2. **User-Sovereign:** You own the data; apps are just "skins."
 3. **Delegated Logic:** Remote power (AI/Search) that is mathematically verifiable.
 4. **Platform-Locked:** The "Legacy" silo where data is a hostage (The Enshittified State).
+
+| Group | Data Ownership | Logic Execution | Connection Type | Philosophy |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Local-Only** | Device Storage | Local (Client) | Air-gapped / Offline | Total isolation. |
+| **2. User-Sovereign** | User's Trusted Node | Local (Client) | Direct Peer-to-Peer | Data is a utility; apps are just skins. |
+| **3. Delegated Logic** | User's Trusted Node | Remote (Verifiable) | Compute-over-Data | Power of a server, privacy of a local app. |
+| **4. Platform-Locked** | Service Provider | Remote (Proprietary) | Siloed API | The Enshittification Zone. |
