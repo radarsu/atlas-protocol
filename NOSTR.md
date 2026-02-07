@@ -1,11 +1,60 @@
 # Atlas - Differences with Nostr
 
-## NIPs vs Common Schema governance
-Nostr optimizes for freedom and survivability by minimizing coordination. This prevents protocol-level gatekeeping, but shifts coherence, discovery, and interpretation entirely to clients. Over time, this might cause power to concentrate at the client layer, where dominant applications implicitly define data meaning, filtering logic, ranking, and social norms through proprietary conventions and defaults.
+## Governance
+Nostr optimizes for freedom and survivability by minimizing coordination. This prevents protocol-level gatekeeping, but shifts coherence, discovery, and interpretation entirely to clients. Over time, this might cause power to concentrate at the client layer, where dominant applications implicitly define data meaning, filtering logic, ranking, and social norms through proprietary conventions and defaults. 
 
-Atlas starts from the observation that client-level power concentration is unavoidable in incoherent data environments. Where structure is undefined at the protocol level, the most widely adopted client becomes the de facto semantic authority.
+Nostr claims to avoid authority, but that actually **hides it in relays and clients** (meaning is client-defined and power sits in defaults). Nostr intentionally refuses expressiveness to avoid coordination complexity.
+- Clients decide how to interpret events
+- Relays decide what to host
+- Users choose keys and relays
+
+Atlas starts from the observation that client-level power concentration is unavoidable in incoherent data environments. Where structure is undefined at the protocol level, the most widely adopted client becomes the de facto semantic authority. In a distributed network, when it grows beyond trivial scale, it needs governance in the same sense people need it: to prevent its silent capture by money, defaults, or inertia. **The kind of governance matters more than the fact that it exists.**
 
 Atlas therefore accepts explicit, transparent semantic governance. By converging on shared, versioned schemas, Atlas allows queries and aggregation logic to be portable across clients. This shifts power from opaque client implementations to auditable, forkable, collectively governed semantic standards, enabling interoperable personal databases and more stable user experience across applications — at the cost of increased coordination pressure.
+
+### The Three Ways Power Appears (Whether You Want It or Not)
+
+If you do nothing, power concentrates via:
+
+#### Money
+- Hosting Relays  
+- Paying developers  
+- Running infrastructure  
+- Funding client defaults  
+
+This leads to **economic governance**.
+
+#### Defaults
+- Popular clients  
+- Preconfigured settings  
+- UX shortcuts  
+
+This leads to **governance by accident**.
+
+#### Social Authority
+- Influencers  
+- Maintainers  
+- Core contributors  
+
+This leads to **governance by reputation without accountability**.
+
+**None of these are fair.**
+**None are neutral.**
+
+### What Governance Is Actually For
+
+Governance in distributed systems is **not** about:
+- Control
+- Commands
+- Central planning
+
+It **is** about:
+- Bounding power
+- Making influence visible
+- Preserving exit
+- Preventing capture
+
+This is closer to **constitutional law** than to management. This is not perfect. But this makes the problem visible and contestable. We believe, that it's a major improvement over pretending it doesn't exist.
 
 ## The "NIP-Soup" Problem
 
