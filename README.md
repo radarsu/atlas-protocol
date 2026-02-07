@@ -7,7 +7,7 @@
 | [AUTH](AUTH.md) | Authentication |
 | [GOVERNANCE](GOVERNANCE.md) | Governance |
 | [MANIFEST](MANIFEST.md) | Manifest |
-| [NOSTR](NOSTR.md) | Nostr integration |
+| [NOSTR](NOSTR.md) | Nostr differences |
 | [PREFERENCES](PREFERENCES.md) | Preferences |
 | [REST](REST.md) | REST API |
 | [SECURITY](SECURITY.md) | Security |
