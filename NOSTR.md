@@ -12,19 +12,12 @@ Nostr solves the "Who owns my account?" problem, but it does not solve "Do these
 
 In Nostr, if you want to build a new feature (e.g., a "Task Manager" or "Medical Record"), you have two choices:
 1. **The Slow Way:** Propose a new NIP (Nostr Implementation Possibility), argue for months on GitHub, and hope other devs implement it.
-2. **The "Silo" Way:** Just pick a random kind number, define your own custom tags, and ship.
+2. **The Fast Way:** Just pick a random kind number, define your own custom tags, and ship.
 
-In Atlas we accept Schema.org as a source of our truth, taking it as a common "skeleton" of semantic meanings. The interpretations might differ. Compatibility might be limited, but we have solid foundations to start from. This is important because non-interoperable data and custom data structures is what effectively causes data lock-ins and user loosing power.
+In Atlas we accept Schema.org as a source of our truth, taking it as a common "skeleton" of semantic meanings. The interpretations might differ. Compatibility might be limited, but we have solid foundations to start from. And as most of coders already use AI agents - accidential convergance becomes desired and likely. This is important because non-interoperable data and custom data structures is what effectively causes data lock-ins and user loosing power.
 
-## Side-by-side Comparisons
-
-**Atlas's View** - Meaning should be getting baked into the protocol via structured Envelopes and social governance.
-
-**Nostr's View** - Meaning is "emergent.". If an app is successful, its kind and tag structure becomes the de facto standard (i.e., kind: 1 for short notes).
-
-**Nostr is like email (SMTP):** It moves text from A to B. It’s great for freedom, but if you send a "spreadsheet" via email, the recipient needs the right software (the same NIP) to open it.
-
-**Atlas is more like a Distributed Database:** It ensures that not only did the message arrive, but that the data means exactly what it was intended to mean across all Nodes.
+## Private key and convenience
+In Nostr
 
 ### Core Goal
 
