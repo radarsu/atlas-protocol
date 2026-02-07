@@ -18,20 +18,24 @@ It's important to understand, that semantic anchor is not an enforcement authori
 - **Forbidden Scopes (Non-Negotiable)** - Semantic authorities can never affect aspects, which would break or cause unequal treatment of other Nodes.
 
 ## Mechanism
-Atlas provides **opt-in coordination of meaning**, not enforcement. Nodes may choose a `semanticAnchorKey` to adopt shared interpretations. This choice is explicit, revocable, and local.
+Atlas provides **opt-in coordination of meaning**, not enforcement. Nodes may choose a `semanticAnchorKey` to adopt shared interpretations and share understanding via **DigitalDocuments**. This choice is explicit, revocable, and local.
 
-As a bootstrap point, the semantic anchor publishes **two initial DigitalDocuments**:
+As a bootstrap point, the semantic anchor publishes in network **two initial DigitalDocuments**:
 
-### 1. Contribution Points
-Defines how contribution points are earned, decay, and are interpreted - for shared local resource management.
+## Digital Documents
 
-### 2. Voting System
-Defines how votes are counted and interpreted.
+### Contribution Points
+Defines how contribution points are earned, decay, and are interpreted for shared local resource management.  
+Contribution points have **local meaning only**: each node interprets them independently based on the evidence it observes and is not required to know or agree on any global balance or history.
+
+### Voting
+Defines how votes are cast, counted, and interpreted.  
+Votes have **local meaning only**: each node evaluates votes based on the signed ballots it observes and is not required to see all votes or agree on a global tally.
 
 All later DigitalDocuments are adopted only if they pass the defined vote. Nodes remain free to adopt, ignore, or fork at any time.
 
 ## Complexity
-As number of digital documents grows, the complexity of some nodes will grow. That is unavoidable. But the real question is if nodes can safely ignore most of it and that ability keeps complexity contained and entry barrier to the network - low.
+As number of digital documents grows, the complexity of some nodes will grow. That is unavoidable. But the real question is if nodes can safely ignore most of it. That will keep complexity contained and entry barrier to the network - low.
 
 In any growing distributed system, complexity appears in one of three places:
 - In the protocol
