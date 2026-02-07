@@ -1,5 +1,6 @@
 # Atlas - Differences with Nostr
 
+## NIPs vs Common Schema governance
 Nostr optimizes for freedom and survivability by minimizing coordination. This prevents protocol-level gatekeeping, but shifts coherence, discovery, and interpretation entirely to clients. Over time, this might cause power to concentrate at the client layer, where dominant applications implicitly define data meaning, filtering logic, ranking, and social norms through proprietary conventions and defaults.
 
 Atlas starts from the observation that client-level power concentration is unavoidable in incoherent data environments. Where structure is undefined at the protocol level, the most widely adopted client becomes the de facto semantic authority.
@@ -22,7 +23,7 @@ In Atlas, mechanisms to generate scoped, time-limited delegated keys are baked i
 ## Discoverability
 In Nostr, each Relays has some random mixture of data. You somehow discover relays, then you connect and fetch. Finally, you somehow  make sense out of the data with heavy client-side logic. Extreme overfetching is natural.
 
-In Atlas, each Node is specialized and interested only in specific kinds of data and Nodes have predictable discovery mechanisms. They talk to each other, they test each other and gossip. This allows client-side to hit exactly where it needs to to get exactly type of data it needs, with minimized overfetching.
+In Atlas, each Node is specialized and interested only in specific kinds of data and Nodes have predictable discovery mechanisms. They talk to each other, they test each other and gossip. This allows client-side to hit exactly where it needs to get exactly type of data it needs, with minimized overfetching. Scalability and performance is greatly improved and each microservice can specialize in fast storage and delivery of specific structured data type. It's more like organized microservices instead of random caches.
 
 ## Websocket doubts
 I have been using Websockets quite a lot in the past. 7 years ago I was already experimenting with systems built fully on Websockets, as I believed they're a good fit (https://github.com/radarsu/rpc-websocket-client). Eventually, I encountered numerous problems with scaling them. Numerous problem with browser compatibility. Even right now Nostr websites are not working well on browser of my choice - Brave, because Brave doesn't allow too many Websocket connections.
