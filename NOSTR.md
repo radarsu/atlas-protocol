@@ -19,7 +19,15 @@ In Nostr, security is simple and delegated keys approach are an afterthrough. Th
 
 In Atlas, mechanisms to generate scoped, time-limited delegated keys are baked into the protocol, as well as OIDC-like flow for keeping root private key safe and recoverable for casual users.
 
-## 
+## Discoverability
+In Nostr, each Relays has some random mixture of data. You somehow discover relays, then you connect and fetch. Finally, you somehow  make sense out of the data with heavy client-side logic. Extreme overfetching is natural.
+
+In Atlas, each Node is specialized and interested only in specific kinds of data and Nodes have predictable discovery mechanisms. They talk to each other, they test each other and gossip. This allows client-side to hit exactly where it needs to to get exactly type of data it needs, with minimized overfetching.
+
+## Websocket doubts
+I have been using Websockets quite a lot in the past. 10 years ago I was already experimenting with systems built fully on Websockets, as I believe they're the future (https://github.com/radarsu/rpc-websocket-client). But eventually, I encountered numerous problems with scaling them. Numerous problem with browser compatibility. Even right now Primal.net is not well working on browser of my choice - Brave, because Brave doesn't allow too many Websocket connections.
+
+I got my lessons and I believe Websockets in Nostr are going to slow down it's adoption and block client-only apps, because effectively every higher quality app will need to use Websockets mostly on the backend to then provide classic HTTP feed with all the browser-level caching and other goodness.
 
 ### Core Goal
 
