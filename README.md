@@ -9,7 +9,7 @@ The system separates 5 elements:
 
 - **Identity** - cryptographic private key.
 - **Content** - identified by hash, signed by author and possibly readable only by targetted audience.
-- **Storage** - distributed databases (best-effort caches) for standarized formats.
+- **Storage** - distributed databases (best-effort caches) for standardized formats.
 - **Semantics** - governed by open contribution processes (Schema.org).
 - **Gossip** - knowledge of other Nodes.
 
