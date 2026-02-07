@@ -29,6 +29,8 @@ I have been using Websockets quite a lot in the past. 7 years ago I was already 
 
 I got my lessons and I believe Websockets in Nostr are going to slow down it's adoption and block client-only apps, because effectively every higher quality app will need to use Websockets mostly on the backend to then provide classic HTTP feed with all the browser-level caching and other goodness.
 
+Atlas goal is to enable developers to make meaninful, high quality apps, without ever writing single line of backend code or messing with custom databases, because pure client-side apps, connecting to user's trusted nodes are the cleanest, privacy-first approach [[TYPES-OF-APPS.md](./TYPES-OF-APPS.md)].
+
 ### Core Goal
 
 | Dimension          | **Nostr**               | **Atlas**                     |
