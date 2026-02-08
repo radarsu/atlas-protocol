@@ -1,45 +1,48 @@
-# Atlas - Coordination of Meaning
+# Atlas – Coordination of Meaning
 
-Atlas does not enforce global governance. Instead, it provides an opt-in coordination of meaning and interpretation through explicit, revocable configuration.
+Atlas separates governance into **two layers** that both define shared meaning, but with different scope and change cost.
 
-Nodes may choose `semanticAnchorKey` to coordinate parameters that enable shared meaning. This is similar to governance of interoperable data structures by Schema.org.
+Atlas does not enforce global governance. It provides **opt-in coordination of meaning and interpretation** through explicit, revocable configuration at the document layer.
 
-It's important to understand, that semantic anchor is not an enforcement authority. Enforcement (binary accept/reject) is defined only by protocol logic and local node configuration. There is no escalation path from semantics to enforcement.
+## Two Layers of Governance
+
+### Protocol-Level Governance (Hard Layer)
+
+Protocol-level governance is embedded in code and shared by all compatible nodes. It is slow to change and expensive to exit. It defines non-negotiable invariants such as cryptographic primitives or protocol validity rules.
+
+This layer enforces what *cannot* be changed.
+
+### Document-Level Governance (Soft Layer)
+
+Document-level governance is expressed through signed **DigitalDocuments** and is explicitly adopted by nodes. It is cheap to change and cheap to exit.
+
+It defines dynamic interpretation such as:
+- shared convention-based systems
+- recommended parameters tuning
+- coordination norms
+
+This layer governs **interpretation**, not **enforcement**.
+
+## Semantic Anchors
+
+Nodes may choose a `semanticAnchorKey` to coordinate on document-level governance. A semantic anchor publishes DigitalDocuments, but has no enforcement authority. Enforcement (binary accept/reject) is defined only by protocol logic and local node configuration. There is no escalation path from semantics to enforcement.
 
 ## Core Principles
 
-- **Local Sovereignty** - Each node decides which interpretations it adopts. No policy is mandatory.
-- **Explicit Authority** - Any influence over shared interpretation is named, visible, and configurable.
-- **Cheap Exit** - Nodes can change or remove semantic anchors at any time without penalty.
-- **Bounded Scope** - Semantic affects interpretation and weighting, never protocol validity.
-- **Forkability Over Enforcement** - Disagreement results in divergence, not coercion.
-- **Transparency Over Neutrality Claims** - All coordination of meaning is acknowledged as social and contextual.
-- **Scope Enforcement (Anti-Authority-Drift)** - Authority drift is prevented by hard technical boundaries, not convention.
-- **Forbidden Scopes (Non-Negotiable)** - Semantic authorities can never affect aspects, which would break or cause unequal treatment of other Nodes.
-
-## Mechanism
-Atlas provides **opt-in coordination of meaning**, not enforcement. Nodes may choose a `semanticAnchorKey` to adopt shared interpretations and share understanding via **DigitalDocuments**. This choice is explicit, revocable, and local.
-
-As a bootstrap point, the semantic anchor publishes in network **two initial DigitalDocuments**:
+- **Explicit Authority** – Influence over meaning is named, visible, and configurable.
+- **Local Sovereignty** – Each node independently chooses which interpretations to adopt and can exit at any time.
+- **Bounded Scope** – Documents affect interpretation and weighting only; protocol validity and safety are out of scope.
+- **Forkability Over Enforcement** – Disagreement results in divergence, not coercion.
 
 ## Digital Documents
+On system bootstrap, a semantic anchor publishes two initial DigitalDocuments. All later DigitalDocuments are considered adopted only if they pass the defined vote under a node’s chosen interpretation. Nodes remain free to adopt, ignore, or fork at any time.
 
 ### Contribution Points
-Defines how contribution points are earned, decay, and are interpreted for shared local resource management.  
-Contribution points have **local meaning only**: each node interprets them independently based on the evidence it observes and is not required to know or agree on any global balance or history.
+Defines how contribution points are earned, decay, and interpreted for shared local resource management. Contribution points have **local meaning only**. Each node interprets them independently based on evidence it observes and does not require global accounting or complete history.
 
 ### Voting
-Defines how votes are cast, counted, and interpreted.  
-Votes have **local meaning only**: each node evaluates votes based on the signed ballots it observes and is not required to see all votes or agree on a global tally.
-
-All later DigitalDocuments are adopted only if they pass the defined vote. Nodes remain free to adopt, ignore, or fork at any time.
+Defines how votes are cast, counted, and interpreted. Votes have **local meaning only**. Each node evaluates votes from signed ballots it observes and does not require a global voter list or canonical tally.
 
 ## Complexity
-As number of digital documents grows, the complexity of some nodes will grow. That is unavoidable. But the real question is if nodes can safely ignore most of it. That will keep complexity contained and entry barrier to the network - low.
 
-In any growing distributed system, complexity appears in one of three places:
-- In the protocol
-- In clients / nodes
-- In social processes and off-chain norms
-
-Atlas deliberately pushes complexity into optional documents instead of hiding it in protocol rules or client defaults for transparency.
+As the number of DigitalDocuments grows, complexity of some Nodes will grow. This is unavoidable. Atlas is designed so nodes can safely ignore most of documents. Complexity is kept explicit and optional, rather than hidden in protocol rules or client defaults, keeping entry barriers low and power.
