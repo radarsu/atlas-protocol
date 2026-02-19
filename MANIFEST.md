@@ -1,6 +1,7 @@
 # The Atlas Manifesto: Societal Revolution
 
 Centralization of power is a natural mechanism. It is needed when coherent decisions need to be made fast. It is needed for convenience. The optimal state of society relies on fragile balance between centralized and decentralized components. The problem was well-known and solved with The Intellectual Architect: Montesquieu (1748). This moved us from societies of authoritarian rulings to federated organisms, where small group of people is powerful, but never a single person. Since recently, I believe it was technically the BEST model for societies to operate at. But not anymore. Today, we can do better.
+<img width="2080" height="1614" alt="image" src="https://github.com/user-attachments/assets/8e585c0d-5eb0-45f8-9dfe-65b9f7c44358" />
 
 ## The Problem: Centralization of Power
 
@@ -21,6 +22,7 @@ When "trade secret" is accepted and people choose to give their freedom for it -
 But is living with cancer and trimming it an optimal way to live? I don't know about you, but I'd rather just be healthy.
 
 ## The Solution: Atlas, the Web of Trust (WoT)
+<img width="2111" height="1573" alt="image" src="https://github.com/user-attachments/assets/fa91bd0f-8e34-40ea-b6f8-059adac38551" />
 
 Montesquieu Model split power into Legislative, Executive and Judical branches. That model remains very reasonable and valid, but digital world has different rules of physics, power dynamics, which only some people understand.
 
