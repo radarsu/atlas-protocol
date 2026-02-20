@@ -6,7 +6,7 @@ Nostr optimizes for freedom and survivability by minimizing coordination. This p
 Nostr claims to avoid authority, but that actually **hides it in relays and clients** (meaning is client-defined and power sits in defaults). Nostr intentionally refuses expressiveness to avoid coordination complexity.
 - Clients decide how to interpret events
 - Relays decide what to host
-- Users choose keys and relays
+- Users choose relays
 
 Atlas starts from the observation that client-level power concentration is unavoidable in incoherent data environments. Where structure is undefined at the protocol level, the most widely adopted client becomes the de facto semantic authority. In a distributed network, when it grows beyond trivial scale, it needs governance in the same sense people need it: to prevent its silent capture by money, defaults, or inertia. **The kind of governance matters more than the fact that it exists.**
 
