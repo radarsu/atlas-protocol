@@ -1,4 +1,4 @@
-# Atlas - Rest
+# Atlas - REST API
 
 Nodes MAY implement any subset of endpoints, but MUST adhere to the security standards defined below to participate in the gossip pool.
 
@@ -16,7 +16,7 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
   // Optional
   "supersedes": "<Envelope that it intends to override>",
   "delegationProof": "<Permit Envelope>", // Check AUTH.md
-  "recipientKeyId": "<BLAKE3 hash of recipient public key>",
+  "recipientKeyId": "<BLAKE3 hash of recipient public key>"
 }
 ```
 
@@ -25,7 +25,8 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
 `GET /envelopes`
 
 Query params:
-```
+
+```txt
 where=<JSON>
 orderBy=<JSON>
 take=<number>
@@ -33,7 +34,8 @@ skip=<number>
 ```
 
 Example:
-```
+
+```txt
 GET /envelopes?where={"authorPublicKey":"<pk>"}&orderBy={"createdAt":"desc"}&take=50
 ```
 
@@ -57,12 +59,13 @@ Response:
 ```
 
 ### Upload Blob
+
 Blobs MUST be sent BEFORE Envelope.
 
 `POST /blobs`
 
-Content-Type: application/octet-stream (or another appropriate media type, e.g. image/png)
-Request body: raw bytes
+- Content-Type: `application/octet-stream` (or another appropriate media type, e.g. `image/png`)
+- Request body: raw bytes
 
 Response:
 ```json
@@ -80,6 +83,7 @@ Response:
 Clients MUST assume that blob availability is not guaranteed.
 
 ### Referencing Blobs from Envelopes
+
 ```json
 {
     "@type": "ImageObject",
@@ -123,7 +127,7 @@ Response:
         "endpoints": ["https://node.example.com"],
         "dataTypes": [{ /* <e2e tests results> */ }],
         "latencyMs": 90, // Milliseconds
-        "uptime": 0.998,
+        "uptime": 0.998
     }
 ]
 ```
@@ -143,6 +147,6 @@ Request body:
 Response:
 ```json
 {
-    "ok": true,
+    "ok": true
 }
 ```

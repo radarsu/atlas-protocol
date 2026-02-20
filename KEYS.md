@@ -2,7 +2,7 @@
 
 ## Algorithm
 
-**Ed25519**, 32-byte keys. No seed phrases — keys are generated randomly with proof-of-work.
+**Ed25519**, 32-byte keys. No seed phrases; keys are generated randomly with proof-of-work.
 
 ## Tiers
 

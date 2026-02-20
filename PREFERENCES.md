@@ -1,6 +1,7 @@
 # Atlas - Preferences
 
-**Client apps** MUST respect user preferences, which can be obtained by `GET /envelopes` request with proper filter. Only a Statement with latest dateCreated property MUST be respected.
+**Client apps** MUST respect user preferences retrieved via `GET /envelopes` with an appropriate filter.  
+Only the `Statement` with the latest `dateCreated` value MUST be applied.
 
 ```json
 {

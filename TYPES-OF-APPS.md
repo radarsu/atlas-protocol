@@ -1,33 +1,39 @@
-### **Group 1: Local-Only Apps**
-*Not communicating with Storages.*
+# Atlas - Types of Apps
 
-These are privacy-first, standalone tools. They function like traditional "offline" software but within a modern web/mobile framework.
+## Group 1: Local-Only Apps
 
-### **Group 2: User-Sovereign Apps**
-*Directly communicating with Storages, but all processing logic is client-side.*
+*Not communicating with storage nodes.*
 
-The app is just a "viewer" or "editor”. The "brain" of the app runs on **your device** (Client-Side). The app fetches data, performs the logic (like sorting your social feed or calculating a budget), and then saves the result back to your storage.
+These are privacy-first, standalone tools. They behave like traditional offline software inside modern web/mobile frameworks.
 
-### Group 3: Delegated Logic (Compute-Over-Data)
-*Communicating with Storage, but processing logic happens on a remote (but verifiable) server.*
+## Group 2: User-Sovereign Apps
 
-In this group, the data is still yours, but the "math" is too heavy for your phone (e.g., training a private AI model or indexing millions of decentralized posts). Apps uses transparent, known and generally verifiable algorithms.
+*Directly communicating with storage nodes, with all processing logic on the client side.*
 
-### Group 4: Platform-Locked Apps (The Legacy Model)
-*Enshittification Zone*
+The app is just a viewer/editor. The "brain" runs on **your device**. The app fetches data, performs logic (for example sorting a social feed or calculating a budget), and saves results back to your storage.
 
-Communicating with Centralized/Siloed Storages. All logic is server-side and proprietary. This is the current state of **Facebook, X (Twitter), and Instagram.** In this group, the platform owns the "Data," the "Logic," and the "Network."
+## Group 3: Delegated Logic (Compute-over-Data)
 
-### Summarization of Group Hierarchies
+*Communicating with storage, but processing logic runs on a remote (verifiable) server.*
+
+Data is still user-owned, but the computation is too heavy for a phone (for example training a private AI model or indexing millions of decentralized posts). Apps use transparent, known, and generally verifiable algorithms.
+
+## Group 4: Platform-Locked Apps (Legacy Model)
+
+*Enshittification zone.*
+
+These apps communicate with centralized/siloed storage. All logic is proprietary and server-side. This is the current state of platforms like **Facebook, X (Twitter), and Instagram**. The platform owns the data, logic, and network.
+
+## Summary
 
 1. **Local-Only:** Privacy-first, zero-leakage tools.
-2. **User-Sovereign:** You own the data; apps are just "skins."
-3. **Delegated Logic:** Remote power (AI/Search) that is mathematically verifiable.
-4. **Platform-Locked:** The "Legacy" silo where data is a hostage (The Enshittified State).
+2. **User-Sovereign:** You own the data; apps are just skins.
+3. **Delegated Logic:** Remote power (AI/search) with verifiable computation.
+4. **Platform-Locked:** Legacy silo model where user data is hostage.
 
 | Group | Data Ownership | Logic Execution | Connection Type | Philosophy |
 | :--- | :--- | :--- | :--- | :--- |
 | **1. Local-Only** | Device Storage | Local (Client) | Air-gapped / Offline | Total isolation. |
-| **2. User-Sovereign** | User's Trusted Node | Local (Client) | Direct Peer-to-Peer | Data is a utility; apps are just skins. |
-| **3. Delegated Logic** | User's Trusted Node | Remote (Verifiable) | Compute-over-Data | Power of a server, privacy of a local app. |
-| **4. Platform-Locked** | Service Provider | Remote (Proprietary) | Siloed API | The Enshittification Zone. |
+| **2. User-Sovereign** | User's Trusted Node | Local (Client) | Direct Peer-to-Peer | Data is a utility; apps are skins. |
+| **3. Delegated Logic** | User's Trusted Node | Remote (Verifiable) | Compute-over-Data | Server power, local-app privacy. |
+| **4. Platform-Locked** | Service Provider | Remote (Proprietary) | Siloed API | Enshittification zone. |

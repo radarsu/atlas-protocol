@@ -5,23 +5,29 @@
 | Document | Description |
 |----------|-------------|
 | [AUTH](AUTH.md) | Authentication |
+| [FAQ](FAQ.md) | Frequently asked questions |
 | [GOVERNANCE](GOVERNANCE.md) | Governance |
+| [KEYS](KEYS.md) | Key format and tiers |
 | [MANIFEST](MANIFEST.md) | Manifest |
 | [NOSTR](NOSTR.md) | Nostr differences |
 | [PREFERENCES](PREFERENCES.md) | Preferences |
 | [REST](REST.md) | REST API |
 | [SECURITY](SECURITY.md) | Security |
 | [TYPES-OF-APPS](TYPES-OF-APPS.md) | Types of applications |
+| [order/README](order/README.md) | Atlas Order overview |
+| [order/ECONOMY](order/ECONOMY.md) | Order economic model |
+| [order/VERIFICATION](order/VERIFICATION.md) | Order identity verification |
 
 ## Overview
 
-Atlas is a transport-protcol-agnostic P2P decentralized publishing and discovery protocol where **users own their data** and **govern it to converge into structured, interoperable databases**, empowering users and developers.
+Atlas is a transport-protocol-agnostic P2P decentralized publishing and discovery protocol where **users own their data** and **govern it to converge into structured, interoperable databases**, empowering users and developers.
+
 <img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/3f8201da-63b8-4c78-86c1-71e05fd77c5f" />
 
 The system separates 5 elements:
 
 - **Identity** - cryptographic private key.
-- **Content** - identified by hash, signed by author and possibly readable only by targetted audience.
+- **Content** - identified by hash, signed by author, and possibly readable only by targeted audience.
 - **Storage** - distributed databases (best-effort caches) for standardized formats.
 - **Semantics** - governed by open contribution processes (Schema.org).
 - **Gossip** - knowledge of other Nodes.
@@ -44,7 +50,7 @@ The system separates 5 elements:
 Person controlling a cryptographic private key.
 
 - Creates, signs, and publishes Envelopes (data).
-- Chooses to which Nodes to publish to and from which Nodes to read from.
+- Chooses which Nodes to publish to and which Nodes to read from.
 
 ### Connectors
 
@@ -60,7 +66,7 @@ Each user may turn into a Node and start hosting data in P2P network by enabling
 **Storage**
 
 - Pull data from known Nodes to achieve desired state.
-- Accept queries to it's database.
+- Accept queries to its database.
 - Accept subscriptions to notifications about Envelopes.
 - Accept Envelopes from users.
 

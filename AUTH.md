@@ -1,6 +1,6 @@
-# Atlas - Convenient & Interoperable Authorization
+# Atlas - Authorization
 
-## Authorization via trusted service (recommended for most of users)
+## Authorization via Trusted Service (recommended for most users)
 
 ### Onboarding
 
@@ -8,14 +8,14 @@
 
 2. The user selects an authorization method with a **trusted service**, such as:
 
-- Login/password
-- OIDC provider (i.e. Google)
-- etc.
+   - Login/password
+   - OIDC provider (i.e. Google)
+   - etc.
 
 3. The private key is encrypted client-side using a secret derived from the chosen authorization method:
 
-- Strong KDF for passwords
-- Provider-bound derivation for OIDC
+   - Strong KDF for passwords
+   - Provider-bound derivation for OIDC
 
 4. The encrypted private key is uploaded to the **trusted service**, which never sees the raw private key.
 
@@ -23,13 +23,13 @@
 
 ---
 
-### Client-app authorization
+### Client-App Authorization
 
-1. Unauthorized user chooses his **trusted service** button and gets redirected to **trusted client app** (where he is authorized), to `/atlas/delegate?url=https://app.example.com&p=[{"@type": "CreateAction","object": {"@type": "SocialMediaPosting"}}]`.
+1. An unauthorized user clicks their **trusted service** button and gets redirected to the **trusted client app** (where they are authorized), to `/atlas/delegate?url=https://app.example.com&p=[{"@type": "CreateAction","object": {"@type": "SocialMediaPosting"}}]`.
 
-2. In **trusted client app** user sets time scope (validFrom and validUntil) and obtains short-lived, secret url to copy from **trusted service**.
+2. In the **trusted client app**, the user sets the time scope (`validFrom` and `validUntil`) and obtains a short-lived secret URL from the **trusted service**.
 
-3. **Trusted service** uses authorization material from user to prepare (not yet publish) delegated private key Permit Envelope:
+3. The **trusted service** uses authorization material from the user to prepare (but not yet publish) a delegated private key Permit Envelope:
 
 ```json
 {
@@ -52,16 +52,16 @@
 }
 ```
 
-5. User goes back to unauthorized **client app** and inputs short-lived url.
-6. **Client app** sends GET on the url to request **trusted service** (responding only to proper Origin header, no-store, no-cache, max-age=0), in return receiving delegated private-key. Short-lived url immediately stops working.
-7. Upon GET request, **trusted service** publishes prepared Permit envelope to the network, which validates the delegation across the Nodes. **Trusted service** is also responsible for storage and availability of issued Permit envelopes, as recognition of validity of delegated-claims depends on them.
+4. The user goes back to the unauthorized **client app** and provides the short-lived URL.
+5. The **client app** sends `GET` to the URL, requesting the **trusted service** (responding only to a proper `Origin` header, with `no-store, no-cache, max-age=0`), and receives the delegated private key. The short-lived URL immediately stops working.
+6. On that `GET`, the **trusted service** publishes the prepared Permit Envelope to the network, which validates delegation across Nodes. The **trusted service** is also responsible for storage and availability of issued Permit Envelopes, because delegated-claim validity depends on them.
 
-Regardless of using **trusted service**, user always keeps ability to sign and publish Envelopes without it, by direct private key injection into **client app** or **browser extension**.
+Regardless of the **trusted service**, the user always keeps the ability to sign and publish Envelopes without it, by direct private key injection into a **client app** or **browser extension**.
 
-## Authorization for casual identity (low-friction entry; not for usage, where security matters)
+## Authorization for Casual Identity (low-friction entry; not for security-critical usage)
 
-1. Unauthorized user inserts login, password and birth date in **trusted client app** and generates a private/public key pair.
-2. User encrypts his private key using his password as decrypt phrase and publishes following Envelope to the network:
+1. An unauthorized user enters login, password, and birth date in a **trusted client app** and generates a private/public key pair.
+2. The user encrypts their private key using their password as a decryption phrase and publishes the following Envelope to the network:
 
 ```json
 {
@@ -73,17 +73,17 @@ Regardless of using **trusted service**, user always keeps ability to sign and p
 }
 ```
 
-3. When the user enters login, password, and birth date in any client app, it SHOULD deterministically derive the Envelope @id from the login and birth date using Argon2id, fetch the Envelope, then derive a decryption key from password using Argon2id and decrypt/authenticate the "text" field with XChaCha20-Poly1305 to recover and store the private key locally.
+3. When the user enters login, password, and birth date in any client app, it SHOULD deterministically derive the Envelope `@id` from login and birth date using Argon2id, fetch the Envelope, then derive a decryption key from password using Argon2id and decrypt/authenticate the `text` field with XChaCha20-Poly1305 to recover and store the private key locally.
 
-## Authorization via trusted client apps (recommended for technical users)
+## Authorization via Trusted Client Apps (recommended for technical users)
 
-Onboarding of technical users into Atlas does not rely on a convenient **trusted service**. The user retains full custody and responsibility. Technical users trade convenience and **trusted service** assisted recovery for a full sovereignty and minimal delegated trust.
+Onboarding of technical users into Atlas does not rely on a convenient **trusted service**. The user retains full custody and responsibility. Technical users trade convenience and **trusted service**-assisted recovery for full sovereignty and minimal delegated trust.
 
-1. User generates a private/public key-pair in an environment they control (i.e. CLI, desktop app, hardware device). No third party ever sees the raw private key.
-2. User stores the private key themselves (i.e. file, vault, HSM). No default "convenience" backup on a Node.
-3. User SHOULD publish a Person envelope with the metadata they wish to expose (i.e. public key, auth hints) to establish their network presence.
+1. The user generates a private/public key pair in an environment they control (i.e. CLI, desktop app, hardware device). No third party ever sees the raw private key.
+2. The user stores the private key themselves (i.e. file, vault, HSM). No default "convenience" backup on a Node.
+3. The user SHOULD publish a Person Envelope with the metadata they wish to expose (i.e. public key, auth hints) to establish their network presence.
 
-## Suspicious activity challenging
+## Suspicious Activity Challenge
 
 Nodes MAY require an additional trust proof when suspicious activity is detected. The challenge flow begins with the Node rejecting the request with `401 Unauthorized` and returning the following headers:
 
@@ -101,11 +101,11 @@ Response:
   X-Atlas-Authorities: https://authority.example.com,https://other-authority.example.com
 ```
 
-On the next request, a rejected Client (if the user is trusted by any of the listed authorities) SHOULD include:
+On the next request, a rejected client (if the user is trusted by any of the listed authorities) SHOULD include:
 
 - **Header**: `X-Atlas-Public-Key: <Public key>`
 - **Header**: `X-Atlas-Signature: <Signature over challenge verifiable against X-Atlas-Public-Key>`
-- **Header**: `X-Atlas-ClaimReview: <base54(Canonical envelope JSON)>`
+- **Header**: `X-Atlas-ClaimReview: <base64(Canonical envelope JSON)>`
 
 Example:
 
@@ -118,15 +118,15 @@ Request:
   X-Atlas-ClaimReview: { Envelope with ClaimReview }
 ```
 
-Then Node verifies:
+Then the Node verifies:
 
 - **Challenge validity**: if `X-Atlas-Expires` has not expired.
 - **Authority selection**: if `X-Atlas-Trusted-By` is one of the URLs listed in `X-Atlas-Authorities` (trusted by node).
 - **Signature validity**: `X-Atlas-Signature` is a valid signature by `X-Atlas-Public-Key` over the challenged bytes (`X-Atlas-Challenge` value).
 
-If verification fails, the Node rejects the request with `401 Unauthorized` and include a new `X-Atlas-Challenge`.
+If verification fails, the Node rejects the request with `401 Unauthorized` and includes a new `X-Atlas-Challenge`.
 
-If verification passes, the Node verifies the signature on the ClaimReview against the public key of the trusted authority indicated by `X-Atlas-Trusted-By`, ensure the ClaimReview is time-valid (`validUntil` in the future and `datePublished` not in the future relative to Node time), and ensure that the ClaimReview asserts trust for the provided `X-Atlas-Public-Key`.
+If verification passes, the Node verifies the signature on the ClaimReview against the public key of the trusted authority indicated by `X-Atlas-Trusted-By`, ensures the ClaimReview is time-valid (`validUntil` in the future and `datePublished` not in the future relative to Node time), and ensures that the ClaimReview asserts trust for the provided `X-Atlas-Public-Key`.
 
 If all checks succeed, the Node accepts the request.
 

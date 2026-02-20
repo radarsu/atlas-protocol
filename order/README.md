@@ -2,8 +2,9 @@
 
 Atlas Order defines the social, economic, and governance framework built on top of the Atlas Protocol.
 
-While the **Atlas Protocol** provides technical infrastructure (digital documents, identity, registries, contracts),  
+While the **Atlas Protocol** provides technical infrastructure (digital documents, identity, registries, contracts),
 **Atlas Order** defines how participants may choose to coordinate, allocate capital, and govern collectively.
+
 ## Core Principles
 
 ### Monetary Equilibrium

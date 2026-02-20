@@ -17,6 +17,7 @@ This layer enforces what *cannot* be changed.
 Document-level governance is expressed through signed **DigitalDocuments** and is explicitly adopted by nodes. It is cheap to change and cheap to exit.
 
 It defines dynamic interpretation such as:
+
 - shared convention-based systems
 - recommended parameters tuning
 - coordination norms
@@ -35,14 +36,17 @@ Nodes may choose a `semanticAnchorKey` to coordinate on document-level governanc
 - **Forkability Over Enforcement** – Disagreement results in divergence, not coercion.
 
 ## Digital Documents
+
 On system bootstrap, a semantic anchor publishes two initial DigitalDocuments. All later DigitalDocuments are considered adopted only if they pass the defined vote under a node’s chosen interpretation. Nodes remain free to adopt, ignore, or fork at any time.
 
 ### Contribution Points
+
 Defines how contribution points are earned, decay, and interpreted for shared local resource management. Contribution points have **local meaning only**. Each node interprets them independently based on evidence it observes and does not require global accounting or complete history.
 
 ### Voting
+
 Defines how votes are cast, counted, and interpreted. Votes have **local meaning only**. Each node evaluates votes from signed ballots it observes and does not require a global voter list or canonical tally.
 
 ## Complexity
 
-As the number of DigitalDocuments grows, complexity of some Nodes will grow. This is unavoidable. Atlas is designed so nodes can safely ignore most of documents. Complexity is kept explicit and optional, rather than hidden in protocol rules or client defaults, keeping entry barriers low and power.
+As the number of DigitalDocuments grows, complexity for some nodes will grow. This is unavoidable. Atlas is designed so nodes can safely ignore most documents. Complexity is kept explicit and optional, rather than hidden in protocol rules or client defaults, keeping entry barriers and concentration of power low.

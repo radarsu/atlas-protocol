@@ -1,22 +1,25 @@
 # Atlas - Differences with Nostr
 
 ## Governance
-Nostr optimizes for freedom and survivability by minimizing coordination. This prevents protocol-level gatekeeping, but shifts coherence, discovery, and interpretation entirely to clients. Over time, this might cause power to concentrate at the client layer, where dominant applications implicitly define data meaning, filtering logic, ranking, and social norms through proprietary conventions and defaults. 
+
+Nostr optimizes for freedom and survivability by minimizing coordination. This prevents protocol-level gatekeeping, but shifts coherence, discovery, and interpretation entirely to clients. Over time, this might cause power to concentrate at the client layer, where dominant applications implicitly define data meaning, filtering logic, ranking, and social norms through proprietary conventions and defaults.
 
 Nostr claims to avoid authority, but that actually **hides it in relays and clients** (meaning is client-defined and power sits in defaults). Nostr intentionally refuses expressiveness to avoid coordination complexity.
+
 - Clients decide how to interpret events
 - Relays decide what to host
 - Users choose relays
 
 Atlas starts from the observation that client-level power concentration is unavoidable in incoherent data environments. Where structure is undefined at the protocol level, the most widely adopted client becomes the de facto semantic authority. In a distributed network, when it grows beyond trivial scale, it needs governance in the same sense people need it: to prevent its silent capture by money, defaults, or inertia. **The kind of governance matters more than the fact that it exists.**
 
-Atlas therefore accepts explicit, transparent semantic governance. By converging on shared, versioned schemas, Atlas allows queries and aggregation logic to be portable across clients. This shifts power from opaque client implementations to auditable, forkable, collectively governed semantic standards, enabling interoperable personal databases and more stable user experience across applications — at the cost of increased coordination pressure.
+Atlas therefore accepts explicit, transparent semantic governance. By converging on shared, versioned schemas, Atlas allows queries and aggregation logic to be portable across clients. This shifts power from opaque client implementations to auditable, forkable, collectively governed semantic standards, enabling interoperable personal databases and more stable user experience across applications, at the cost of increased coordination pressure.
 
 ### The Three Ways Power Appears (Whether You Want It or Not)
 
 If you do nothing, power concentrates via:
 
 #### Money
+
 - Hosting Relays  
 - Paying developers  
 - Running infrastructure  
@@ -25,6 +28,7 @@ If you do nothing, power concentrates via:
 This leads to **economic governance**.
 
 #### Defaults
+
 - Popular clients  
 - Preconfigured settings  
 - UX shortcuts  
@@ -32,6 +36,7 @@ This leads to **economic governance**.
 This leads to **governance by accident**.
 
 #### Social Authority
+
 - Influencers  
 - Maintainers  
 - Core contributors  
@@ -44,17 +49,19 @@ This leads to **governance by reputation without accountability**.
 ### What Governance Is Actually For
 
 Governance in distributed systems is **not** about:
+
 - Control
 - Commands
 - Central planning
 
 It **is** about:
+
 - Bounding power
 - Making influence visible
 - Preserving exit
 - Preventing capture
 
-This is closer to **constitutional law** than to management. This is not perfect. But this makes the problem visible and contestable. We believe, that it's a major improvement over pretending it doesn't exist.
+This is closer to **constitutional law** than to management. This is not perfect. But it makes the problem visible and contestable. We believe that is a major improvement over pretending it doesn't exist.
 
 ## The "NIP-Soup" Problem
 
@@ -62,24 +69,27 @@ In Nostr, if you want to build a new feature (e.g., a "Task Manager" or "Medical
 1. **The Slow Way:** Propose a new NIP (Nostr Implementation Possibility), argue for months on GitHub, and hope other devs implement it.
 2. **The Fast Way:** Just pick a random kind number, define your own custom tags, and ship.
 
-In Atlas we accept Schema.org as a source of our truth, taking it as a common "skeleton" of semantic meanings. The interpretations might differ. Compatibility might be limited, but we have solid foundations to start from. And as most of coders already use AI agents - accidential convergance becomes desired and likely. This is important because non-interoperable data and custom data structures is what effectively causes data lock-ins and user loosing power.
+In Atlas, we use Schema.org as a common "skeleton" of semantic meanings. Interpretations might differ, and compatibility may still be limited, but this gives us a strong foundation. As more developers use AI agents, accidental convergence becomes more likely. This matters because non-interoperable data and custom data structures cause lock-in and users lose power.
 
 ## Private key and convenience
-In Nostr, security is simple and delegated keys approach are an afterthrough. That ultimately will lead to high risk of losing a key and therefore - losing your identity.
+
+In Nostr, security is simple and delegated-key approaches are an afterthought. That increases the risk of losing a key and, as a result, losing your identity.
 
 In Atlas, mechanisms to generate scoped, time-limited delegated keys are baked into the protocol, as well as OIDC-like flow for keeping root private key safe and recoverable for casual users.
 
 ## Discoverability
-In Nostr, each Relays has some random mixture of data. You somehow discover relays, then you connect and fetch. Finally, you somehow  make sense out of the data with heavy client-side logic. Extreme overfetching is natural.
 
-In Atlas, each Node is specialized and interested only in specific kinds of data and Nodes have predictable discovery mechanisms. They talk to each other, they test each other and gossip. This allows client-side to hit exactly where it needs to get exactly type of data it needs, with minimized overfetching. Scalability and performance is greatly improved and each microservice can specialize in fast storage and delivery of specific structured data type. It's more like organized microservices instead of random caches.
+In Nostr, each relay has a random mixture of data. You discover relays, connect, fetch, and then make sense of data with heavy client-side logic. Overfetching is natural.
 
-## Websocket doubts
-I have been using Websockets quite a lot in the past. 7 years ago I was already experimenting with systems built fully on Websockets, as I believed they're a good fit (https://github.com/radarsu/rpc-websocket-client). Eventually, I encountered numerous problems with scaling them. Numerous problem with browser compatibility. Even right now Nostr websites are not working well on browser of my choice - Brave, because Brave doesn't allow too many Websocket connections.
+In Atlas, each Node is specialized for specific data types, and nodes have predictable discovery mechanisms. They talk to each other, test each other, and gossip. This lets clients query exactly where they need to for specific data, with less overfetching. Scalability and performance improve, and each microservice can specialize in storing and delivering a specific structured data type. It behaves more like organized microservices than random caches.
 
-I got my lessons and I believe Websockets in Nostr are going to slow down it's adoption and block client-only apps, because effectively every higher quality app will need to use Websockets mostly on the backend to then provide classic HTTP feed with all the browser-level caching and other goodness.
+## WebSocket doubts
 
-Atlas goal is to lower the entry barrier and enable developers to make meaninful, high quality apps, without ever writing single line of backend code or messing with custom databases. Pure client-side apps, connecting to user's trusted nodes are the cleanest, privacy-first approach [[TYPES-OF-APPS.md](./TYPES-OF-APPS.md)].
+I have used WebSockets a lot in the past. Seven years ago, I experimented with systems built fully on WebSockets because I believed they were a good fit (https://github.com/radarsu/rpc-websocket-client). Eventually, I encountered many scaling and browser-compatibility problems. Even now, some Nostr websites do not work well in Brave because it limits WebSocket connections.
+
+Based on that experience, I believe WebSockets in Nostr may slow adoption and block client-only apps. In practice, higher-quality apps often end up using WebSockets mostly on the backend, then serving a classic HTTP feed to benefit from browser caching and related optimizations.
+
+Atlas aims to lower the entry barrier and enable developers to build meaningful, high-quality apps without writing backend code or managing custom databases. Pure client-side apps that connect to a user's trusted nodes are the cleanest, privacy-first approach ([TYPES-OF-APPS.md](./TYPES-OF-APPS.md)).
 
 ### Core Goal
 
@@ -97,7 +107,7 @@ Atlas goal is to lower the entry barrier and enable developers to make meaninful
 | Identity           | Public key                               | Public key             |
 | Object identity    | Event hash (version) + addressable slots | EntityId + hash        |
 | Mutable state      | Replaceable / addressable events         | Supersedes + entity    |
-| Stable document ID | `(pubkey, kind, d)`                      | IPFS-compliant hash     |
+| Stable document ID | `(pubkey, kind, d)`                      | IPFS-compliant hash    |
 | History required   | No                                       | Optional / desirable   |
 | Fork handling      | Deterministic (newest wins locally)      | Explicit, policy-bound |
 
