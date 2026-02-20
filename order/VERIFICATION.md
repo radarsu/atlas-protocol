@@ -13,7 +13,7 @@ For higher levels, multiple independent authorities must confirm the identity. V
 
 ## Level 0 — Unverified
 
-- Protocol-level `"cit"`, `"tita"` or `"atlas"` proof of work  
+- Protocol-level `"aaa"`, `"aaaa"` or `"aaaaa"` proof of work  
 - No formal identity confirmation  
 
 **Purpose:**  
@@ -23,7 +23,7 @@ Read-only participation limited to proof-of-work level.
 
 ## Level 1 — Basic Verification
 
-- Protocol-level `"tita"` or `"atlas"` proof of work  
+- Protocol-level `"aaaa"` or `"aaaaa"` proof of work  
 - Verified by 1 identity authority  
 - Minimal email / phone verification  
 - Unique account check & anti-bot safeguards  
@@ -35,7 +35,7 @@ Open participation within the network.
 
 ## Level 2 — Identity Verified
 
-- Protocol-level `"atlas"` proof of work  
+- Protocol-level `"aaaaa"` proof of work  
 - Verified by 3 independent, randomized identity authorities  
 - In-person passport or government ID check  
 - Proof of residence and location verification  

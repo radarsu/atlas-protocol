@@ -14,9 +14,9 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
 
 All requests MUST include the client's public key and signature. Nodes MUST reject public keys that do not start with a conventional prefix:
 
-- **cit** (citizen; weak PoW; READ-only access limited to `GET` requests)
-- **tita** (titan; medium PoW)
-- **atlas** (atlas; strong PoW)
+- **aaa** (tier 1; weak PoW; READ-only access limited to `GET` requests)
+- **aaaa** (tier 2; medium PoW)
+- **aaaaa** (tier 3; strong PoW)
 
 **Header**: `X-Atlas-Public-Key: <Public key of sender (not necessarily author)>`
 

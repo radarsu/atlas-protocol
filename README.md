@@ -4,19 +4,19 @@
 
 | Document | Description |
 |----------|-------------|
-| [AUTH](AUTH.md) | Authentication |
-| [FAQ](FAQ.md) | Frequently asked questions |
-| [GOVERNANCE](GOVERNANCE.md) | Governance |
-| [KEYS](KEYS.md) | Key format and tiers |
-| [MANIFEST](MANIFEST.md) | Manifest |
-| [NOSTR](NOSTR.md) | Nostr differences |
-| [PREFERENCES](PREFERENCES.md) | Preferences |
-| [REST](REST.md) | REST API |
-| [SECURITY](SECURITY.md) | Security |
-| [TYPES-OF-APPS](TYPES-OF-APPS.md) | Types of applications |
-| [order/README](order/README.md) | Atlas Order overview |
-| [order/ECONOMY](order/ECONOMY.md) | Order economic model |
-| [order/VERIFICATION](order/VERIFICATION.md) | Order identity verification |
+| [AUTH](protocol/AUTH.md) | Authentication |
+| [GOVERNANCE](protocol/GOVERNANCE.md) | Governance |
+| [KEYS](protocol/KEYS.md) | Key format and tiers |
+| [PREFERENCES](protocol/PREFERENCES.md) | Preferences |
+| [REST](protocol/REST.md) | REST API |
+| [SECURITY](protocol/SECURITY.md) | Security |
+| [FAQ](explain/FAQ.md) | Frequently asked questions |
+| [NOSTR](explain/NOSTR.md) | Nostr differences |
+| [TYPES-OF-APPS](explain/TYPES-OF-APPS.md) | Types of applications |
+| [MANIFEST](explain/MANIFEST.md) | Manifest |
+| [Order Overview](order/README.md) | Atlas Order overview |
+| [Order Economy](order/ECONOMY.md) | Order economic model |
+| [Order Verification](order/VERIFICATION.md) | Order identity verification |
 
 ## Overview
 
