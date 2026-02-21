@@ -35,8 +35,8 @@ Tier is derived from PoW parameters, not from base64/public-key prefixes.
 | Tier ID | Name      | Argon2 memoryCost | Argon2 timeCost | Difficulty target | Estimated generation time* |
 | ------- | --------- | ----------------- | --------------- | ----------------- | -------------------------- |
 | 1       | Citizen   | `2048 * 1024` KiB | `1`             | 4 leading zero bits | Seconds to ~1 minute |
-| 2       | Titan     | `4096 * 1024` KiB | `2`             | 14 leading zero bits | Several hours to ~1 day |
-| 3       | Atlas     | `8192 * 1024` KiB | `4`             | 20 leading zero bits | Multiple days to weeks |
+| 2       | Titan     | `4096 * 1024` KiB | `2`             | 10 leading zero bits | Minutes to a few hours |
+| 3       | Atlas     | `8192 * 1024` KiB | `4`             | 14 leading zero bits | Several hours to ~1 day |
 
 These are minimum thresholds. A key is valid if it meets at least Citizen thresholds; it does not need to match an exact predefined profile.
 
