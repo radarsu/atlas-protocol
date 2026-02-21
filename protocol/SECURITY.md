@@ -10,27 +10,33 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
 
 ## Protocol Headers
 
-**X-Atlas-Public-Key and X-Atlas-Signature**
+**Authorization (KeyPow) and X-Atlas-Signature**
 
-All requests MUST include the client's public key and signature. Nodes MUST reject keys whose KeyPoW is invalid.
+Guarded API endpoints (`/envelopes/*`, `/nodes/*`) use:
 
-PoW acceptance is threshold-based, not exact-profile based:
+- `Authorization: KeyPow <publicKey>`
+- `X-Atlas-Signature: t=<Method|UnixTimestampMs|PathWithQuery>; s=<Base64Signature>`
 
-- At minimum, PoW MUST satisfy Citizen-level requirements (`memoryCost >= 2048*1024`, `timeCost >= 1`, difficulty >= 4 leading zero bits).
-- Higher Argon2 configurations are valid and SHOULD map to the highest satisfied tier threshold.
+Current guard behavior:
 
-**Header**: `X-Atlas-Public-Key: <Public key of sender (not necessarily author)>`
+- On `GET`, both headers are required. Missing or invalid headers MUST be rejected (`401 Unauthorized`).
+- On non-`GET`, `Authorization` is optional in the current implementation.
+- If a non-`GET` request provides a Citizen-tier `Authorization` key, it MUST be rejected (`401`) because Citizen is read-only.
+- Signature timestamp drift above 5 minutes MUST be rejected.
+- Signature payload must exactly match `METHOD|timestamp|originalUrlWithQuery`.
 
-**Header**: `X-Atlas-Signature: t=<Method|Current Unix timestamp in milliseconds>|Path; s=<Sender signature>` (example: GET|1707052800000|envelopes?where=...1707052800000)
+KeyPoW tier recognition is threshold-based (not exact-profile based):
 
-Clients that omit any of these headers MUST receive `401 Unauthorized`.
-Clients whose timestamp drift is larger than 5 minutes SHOULD be rejected.
+- Minimum accepted tier is Citizen (`memoryCost >= 2048*1024`, `timeCost >= 1`, difficulty >= 4 leading zero bits).
+- Higher Argon2 settings are valid and map to the highest satisfied tier threshold.
+
+For Envelope writes, Node identity policy can enforce stricter minimum author tier via `acceptTier` (`citizen`/`titan`/`atlas`).
 
 ### X-Atlas-Knowledge-Share
 
 Nodes MAY periodically ask clients for help with network discovery by returning this header:
 
-**Header**: `X-Atlas-Knowledge-Share: region=EU; datatypes=ClaimReview,Person`
+**Header**: `X-Atlas-Knowledge-Share: /nodes/announcements`
 
 **Example Behavior**:
 
@@ -40,7 +46,7 @@ Nodes MAY periodically ask clients for help with network discovery by returning 
 ```txt
 GET /envelopes?where={"authorPublicKey":"abc123"}
 Response:
-  X-Atlas-Knowledge-Share: region=EU; datatypes=ClaimReview,Person
+  X-Atlas-Knowledge-Share: /nodes/announcements
   [{ "hash": "...", ... }]
 ```
 
