@@ -16,7 +16,7 @@ The app is just a viewer/editor. The "brain" runs on **your device**. The app fe
 
 *Communicating with storage, but processing logic runs on a remote (verifiable) server.*
 
-Data is still user-owned, but the computation is too heavy for a phone (for example training a private AI model or indexing millions of decentralized posts). Apps use transparent, known, and generally verifiable algorithms.
+Data is still user-owned, but the computation is too heavy for a device (indexing millions of decentralized posts into algorithms, more non-standard features). Apps use transparent, known, and generally verifiable algorithms.
 
 ## Group 4: Platform-Locked Apps (Legacy Model)
 
