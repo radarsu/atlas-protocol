@@ -81,7 +81,7 @@ In Atlas, mechanisms to generate scoped, time-limited delegated keys are baked i
 
 In Nostr, each relay has a random mixture of data. You discover relays, connect, fetch, and then make sense of data with heavy client-side logic. Overfetching is natural.
 
-In Atlas, each Node is specialized for specific data types, and nodes have predictable discovery mechanisms. They talk to each other, test each other, and gossip. This lets clients query exactly where they need to for specific data, with less overfetching. Scalability and performance improve, and each microservice can specialize in storing and delivering a specific structured data type. It behaves more like organized microservices than random caches.
+In Atlas, each Node is specialized for specific data types, and nodes have predictable discovery mechanisms. They talk to each other, test each other, and gossip. This lets clients query exactly where they need to for specific data, with lesser overfetching (mainly for manipulation-verification purposes). Scalability and performance improve, and each microservice can specialize in storing and delivering a specific structured data type. It behaves more like organized microservices than random caches.
 
 ## WebSocket doubts
 
