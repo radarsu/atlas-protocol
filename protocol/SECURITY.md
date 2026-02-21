@@ -12,11 +12,12 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
 
 **X-Atlas-Public-Key and X-Atlas-Signature**
 
-All requests MUST include the client's public key and signature. Nodes MUST reject public keys that do not start with a conventional prefix:
+All requests MUST include the client's public key and signature. Nodes MUST reject keys whose KeyPoW is invalid.
 
-- **aaa** (tier 1; weak PoW; READ-only access limited to `GET` requests)
-- **aaaa** (tier 2; medium PoW)
-- **aaaaa** (tier 3; strong PoW)
+PoW acceptance is threshold-based, not exact-profile based:
+
+- At minimum, PoW MUST satisfy Citizen-level requirements (`memoryCost >= 2048*1024`, `timeCost >= 1`, difficulty >= 4 leading zero bits).
+- Higher Argon2 configurations are valid and SHOULD map to the highest satisfied tier threshold.
 
 **Header**: `X-Atlas-Public-Key: <Public key of sender (not necessarily author)>`
 

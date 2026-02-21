@@ -32,13 +32,19 @@ Tier is derived from PoW parameters, not from base64/public-key prefixes.
 
 ## Tiers (KeyPoW profiles)
 
-| Tier ID | Name      | Argon2 memoryCost | Argon2 timeCost | Difficulty target |
-| ------- | --------- | ----------------- | --------------- | ----------------- |
-| 1       | Citizen   | `2048 * 1024` KiB | `1`             | 4 leading zero bits |
-| 2       | Titan     | `4096 * 1024` KiB | `2`             | 14 leading zero bits |
-| 3       | Atlas     | `8192 * 1024` KiB | `4`             | 20 leading zero bits |
+| Tier ID | Name      | Argon2 memoryCost | Argon2 timeCost | Difficulty target | Estimated generation time* |
+| ------- | --------- | ----------------- | --------------- | ----------------- | -------------------------- |
+| 1       | Citizen   | `2048 * 1024` KiB | `1`             | 4 leading zero bits | Seconds to ~1 minute |
+| 2       | Titan     | `4096 * 1024` KiB | `2`             | 14 leading zero bits | Several hours to ~1 day |
+| 3       | Atlas     | `8192 * 1024` KiB | `4`             | 20 leading zero bits | Multiple days to weeks |
 
-Generation rejects a selected tier if host RAM is below the tier memory requirement.
+These are minimum thresholds. A key is valid if it meets at least Citizen thresholds; it does not need to match an exact predefined profile.
+
+Tier labeling is determined by the highest threshold satisfied (Atlas > Titan > Citizen).
+
+Generation presets still use the table above and reject a selected preset if host RAM is below that preset memory requirement.
+
+\* Estimates are approximate and hardware-dependent (CPU, memory bandwidth, thermal limits, and parallelism).
 
 ## Generation and verification rules
 
@@ -49,9 +55,9 @@ Generation rejects a selected tier if host RAM is below the tier memory requirem
 
 PoW is valid only if all checks pass:
 
-- Argon2 algorithm is `argon2id`, version `19`, parallelism `1`, hash length `32`.
-- `memoryCost` and `timeCost` match one known tier profile.
-- Hash output meets tier leading-zero-bit target.
+- Argon2 algorithm is `argon2id`, version `19`, parallelism is at least `1`, hash length is `32`.
+- `memoryCost` and `timeCost` meet at least Citizen minimums (`>= 2048*1024`, `>= 1`).
+- Hash output meets the required leading-zero-bit target for the claimed/effective tier.
 - `argon2.verify(powHash, powInput)` succeeds.
 
 ## DER prefixes (internal)
