@@ -12,7 +12,7 @@
 | [SECURITY](protocol/SECURITY.md) | Security |
 | [FAQ](explanations/FAQ.md) | Frequently asked questions |
 | [NOSTR](explanations/NOSTR.md) | Nostr differences |
-| [TYPES-OF-APPS](expanations/TYPES-OF-APPS.md) | Types of applications |
+| [TYPES-OF-APPS](explanations/TYPES-OF-APPS.md) | Types of applications |
 | [MANIFEST](explanations/MANIFEST.md) | Manifest |
 | [Order Overview](order/README.md) | Atlas Order overview |
 | [Order Economy](order/ECONOMY.md) | Order economic model |
