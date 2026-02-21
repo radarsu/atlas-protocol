@@ -14,8 +14,11 @@ Nodes MAY implement any subset of endpoints, but MUST adhere to the security sta
 
 Guarded API endpoints (`/envelopes/*`, `/nodes/*`) use:
 
-- `Authorization: KeyPow <publicKey>`
+- `Authorization: KeyPow <publicKeyWithPow>`
 - `X-Atlas-Signature: t=<Method|UnixTimestampMs|PathWithQuery>; s=<Base64Signature>`
+
+`publicKeyWithPow` means the composed KeyPoW identity key:
+`<apub1...>.<powNonce>.<powHash>`
 
 Current guard behavior:
 
