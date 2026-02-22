@@ -2,48 +2,48 @@
 
 Atlas is a decentralized economic system built on three core layers:
 
-- **Holds** — ownership units
+- **FairShares** — ownership units
 - **Trust** — social confidence
 - **Verification** — identity assurance
 
 The system separates ownership, control, and trust.
 
-## 1. Holds (Ownership Layer)
+## 1. FairShares (Ownership Layer)
 
-### What Are Holds?
+### What Are FairShares?
 
-Holds are permanent ownership units.
+FairShares are permanent ownership units.
 
 - Everyone starts with a fixed initial amount.
 - Everyone receives regular income.
-- Holds slowly decrease over time (burn).
+- FairShares slowly decrease over time (burn).
 
-Holds represent your share in the system.
+FairShares represent your share in the system.
 
-- Work → Paid in Holds
-- Holds → Lease assets
+- Work → Paid in FairShares
+- FairShares → Lease assets
 - Assets → Generate income
-- Income → Paid in Holds
+- Income → Paid in FairShares
 
 ### Assets
 
-Anyone may register an asset in Atlas by transferring it through a Holds-denominated contract. Atlas does not evaluate the fairness of the price; it only records that the transfer occurred under Atlas rules.
+Anyone may register an asset in Atlas by transferring it through a FairShares-denominated contract. Atlas does not evaluate the fairness of the price; it only records that the transfer occurred under Atlas rules.
 
 Once registered:
 
 - The asset is recognized and protected within Atlas.
-- The asset may be leased, financed, or used as collateral in Holds-based contracts.
+- The asset may be leased, financed, or used as collateral in FairShares-based contracts.
 
 However:
 
 - Capital accumulation limits apply within Atlas.
-- Future transfers MUST occur in Holds to retain recognition.
+- Future transfers MUST occur in FairShares to retain recognition.
 
 ### Income & Burn
 
 Each participant receives:
 
-- **+96 Holds per week**
+- **+96 FairShares per week**
 
 Each participant loses:
 
@@ -51,7 +51,7 @@ Each participant loses:
 
 This creates a natural equilibrium:
 
-> At **100,000 Holds**, income equals burn.
+> At **100,000 FairShares**, income equals burn.
 
 - Below 100,000 → balance grows.
 - Above 100,000 → balance shrinks.
@@ -84,7 +84,7 @@ This prevents permanent monopolies and power concentration.
 
 ### Temporary Control via Contracts
 
-If someone wants a larger control over a given resource, they must pay Holds to owners for temporary lease rights (limited up to 10 years). Ownership does not transfer permanently.
+If someone wants a larger control over a given resource, they must pay FairShares to owners for temporary lease rights (limited up to 10 years). Ownership does not transfer permanently.
 
 This separates:
 
@@ -95,11 +95,11 @@ When contracts expire, control must be renegotiated. This creates a **contestabl
 
 ## 3. Credits
 
-Credits are 1:1 backed by Holds. They represent the temporary delegation of control over your Holds to another participant. This allows capital to be aggregated and deployed for investments, while permanent ownership remains unchanged.
+Credits are 1:1 backed by FairShares. They represent the temporary delegation of control over your FairShares to another participant. This allows capital to be aggregated and deployed for investments, while permanent ownership remains unchanged.
 
-When Credits are used to purchase assets or settle contracts, the required amount is deducted proportionally from all locked Holds backing those Credits.
+When Credits are used to purchase assets or settle contracts, the required amount is deducted proportionally from all locked FairShares backing those Credits.
 
-The operator does not choose whose Holds are affected — the system allocates impact automatically.
+The operator does not choose whose FairShares are affected — the system allocates impact automatically.
 
 ## 4. Trust (Social Layer)
 
@@ -163,14 +163,14 @@ Trust shapes responsibility.
 
 Atlas operates around a few fixed economic rules:
 
-- **Equilibrium Balance:** 100,000 Holds per participant.  
+- **Equilibrium Balance:** 100,000 FairShares per participant.  
   Income and burn are derived to preserve this balance.
 
 - **Ownership Cap:** No one may permanently own more than 1 / N of any resource (N = population).
 
 - **Lease Limits:** Control over resources is temporary (up to 5 to 10 years) and must be renewed.
 
-- **Fully Backed Credit:** Credits are backed by locked Holds and do not create new money.
+- **Fully Backed Credit:** Credits are backed by locked FairShares and do not create new money.
 
 - **Trust-Based Responsibility:** Trust grants eligibility for roles and panels, but does not affect income or monetary rules.
 

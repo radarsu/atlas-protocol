@@ -15,7 +15,7 @@ Homes are a predictable place where data should be sent when communicating with 
 Homes may be offered in two ways:
 
 - **Free**: anyone can use the Home without payment.
-- **Paid (Holds)**: access requires an active monthly Holds payment.
+- **Paid (FairShares)**: access requires an active monthly FairShares payment.
 
 ## Why Homes Matter
 Homes provide a stable destination for person-to-person communication, so clients know where to send data for a given individual, even when he is offline.

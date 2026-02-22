@@ -7,7 +7,7 @@ Higher verification levels unlock capabilities that require strong identity assu
 Verification is multi-step and decentralized.  
 Identity authorities are selected deterministically from eligible high-trust registries using publicly verifiable randomness. This prevents applicants from choosing their own validators and reduces collusion risk.
 
-For higher levels, multiple independent authorities must confirm the identity. Verifiers may be required to stake reputation and/or bonded Holds, and confirmations remain publicly challengeable for a defined period.
+For higher levels, multiple independent authorities must confirm the identity. Verifiers may be required to stake reputation and/or bonded FairShares, and confirmations remain publicly challengeable for a defined period.
 
 ---
 
@@ -43,7 +43,7 @@ Open participation within the network.
 
 **Allows:**  
 Full citizen rights:
-- Initial Holds allocation  
+- Initial FairShares allocation  
 - Ongoing income  
 - Participation in trust allocation  
 - Voting  

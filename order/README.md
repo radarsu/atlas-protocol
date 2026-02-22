@@ -8,7 +8,7 @@ While the **Atlas Protocol** provides technical infrastructure (digital document
 ## Core Principles
 
 ### Monetary Equilibrium
-- Target equilibrium: **100 000 Holds per participant**
+- Target equilibrium: **100 000 FairShares per participant**
 - Income and burn are derived to preserve this balance.
 - No debt-based monetary expansion.
 
@@ -22,7 +22,7 @@ While the **Atlas Protocol** provides technical infrastructure (digital document
 - Control must be periodically renewed.
 
 ### Fully Backed Credit
-- Credits are backed by locked Holds.
+- Credits are backed by locked FairShares.
 - Credits grant temporary capital control.
 - No creation of unbacked money.
 

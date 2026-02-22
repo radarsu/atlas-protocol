@@ -83,12 +83,12 @@ The Order layer is Atlas’ governance and economic framework. It allows:
 - Trusted decentralized registries.
 - Voting and delegation.
 - Identity enforcement.
-- Economic coordination via the Holds system.
+- Economic coordination via the FairShares system.
 
 ---
 
-## 8. What are Holds?
-Holds are a protocol-native unit used for:
+## 8. What are FairShares?
+FairShares are a protocol-native unit used for:
 - Access control (e.g., paywalled content).
 - Signaling importance (e.g., boosting posts or emails).
 - Paying for storage or API usage.
@@ -98,7 +98,7 @@ They are not a cryptocurrency and are not pegged to USD.
 
 ---
 
-## 9. Are Holds a cryptocurrency or stablecoin?
+## 9. Are FairShares a cryptocurrency or stablecoin?
 No.
 
 - Not a store of value.
@@ -110,14 +110,14 @@ They function as a network usage and influence metric, not speculative capital.
 
 ---
 
-## 10. How do users obtain Holds?
-Users receive Holds according to a shared formula (similar to a universal baseline allocation in non-scarce digital contexts).
+## 10. How do users obtain FairShares?
+Users receive FairShares according to a shared formula (similar to a universal baseline allocation in non-scarce digital contexts).
 
 If users consume network resources without contributing, they eventually run out and must:
 - Contribute storage.
 - Publish valuable content.
 - Provide services.
-- Earn Holds from others.
+- Earn FairShares from others.
 
 ---
 
@@ -129,15 +129,15 @@ If users consume network resources without contributing, they eventually run out
 - Use high-quality apps (e.g., email client, CMS).
 
 ### Economic incentives (Order layer)
-- Earn Holds for services (storage, content, API access).
-- Monetize content via Holds-based paywalls.
+- Earn FairShares for services (storage, content, API access).
+- Monetize content via FairShares-based paywalls.
 - Gain influence through recognized contributions.
 
 Long-term success depends on strong incentive alignment and compelling applications.
 
 ---
 
-## 12. Can Holds gain real-world value?
+## 12. Can FairShares gain real-world value?
 Indirectly, possibly.
 
 While not designed as a store of value:
@@ -152,7 +152,7 @@ Large capital accumulation is intentionally limited to prevent centralization.
 ## 13. Does Atlas support payments like Bitcoin Lightning?
 Yes. External systems (e.g., Bitcoin Lightning) can be integrated as optional components.
 
-Holds are for internal coordination and signaling. External monetary systems can be used for real-world payments.
+FairShares are for internal coordination and signaling. External monetary systems can be used for real-world payments.
 
 ---
 
