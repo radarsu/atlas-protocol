@@ -1,3 +1,117 @@
+# Atlas Security Model
+
+## Overview
+
+The diagram describes a staged security pipeline for peer admission and participation inside the Atlas Network.  
+Peers move through progressively stricter validation layers: transport, protocol compliance, reputation, identity verification, and governance enforcement.
+
+---
+
+## 1. Entry Point
+
+### Unknown Peer
+A new peer attempting to join the network.
+
+---
+
+## 2. Transport Layer Rejection
+
+Peers are immediately rejected if any of the following fail:
+
+1. Invalid identity headers or signature  
+2. Invalid identity-based Proof-of-Work  
+   - Some peers may require TOTP time-windowed PoW  
+3. Invalid envelope/message format  
+
+Only peers passing transport validation proceed.
+
+---
+
+## 3. Protocol Compliance Layer
+
+### Protocol-Compliant Peer
+
+The peer must conform to network protocol rules.
+
+### Soft Security
+
+Non-order-compliant peers may exist, but most rules overlap.  
+Peers failing protocol compliance are rejected before reputation or trust evaluation.
+
+---
+
+## 4. Reputation Layer
+
+### Zero-Reputation Peer
+
+A protocol-compliant peer starts with no trust.
+
+#### Trust Rejection Conditions
+
+A peer may be rejected if:
+
+1. Identity is too fresh (insufficient age)
+2. Excess distrust assigned by other peers  
+   - Distrust accumulates quadratically  
+   - Example threshold: 100 distrust quadratic points
+
+Peers that pass move forward.
+
+---
+
+## 5. P2P Verification Layer
+
+### P2P Verified
+
+Peer successfully passes decentralized verification checks.
+
+---
+
+## 6. Identity Assurance Layer
+
+### Formally Verified
+
+Peer identity verified via trusted identity authority.
+
+#### Identity Rejection Conditions
+
+1. No verification by trusted identity authority  
+2. No one-person-one-account enforcement  
+   - Must be guaranteed by three randomized trusted identity verifications  
+
+---
+
+## 7. Uniqueness Enforcement
+
+### One-Person-One-Account Enforced
+
+The system enforces identity uniqueness before governance access.
+
+---
+
+## 8. Governance Layer
+
+### Order Governance
+
+Only fully verified, uniqueness-enforced peers can participate in governance processes.
+
+---
+
+## Security Model Summary
+
+The Atlas Security architecture combines:
+
+- Cryptographic transport validation  
+- Identity-bound Proof-of-Work  
+- Protocol compliance gating  
+- Quadratic peer distrust scoring  
+- Identity age sensitivity  
+- Decentralized P2P verification  
+- Formal identity verification  
+- Enforced uniqueness constraints  
+- Governance access control  
+
+
 # Atlas - Security
 
 In a headless network, health is maintained through a **dual-layered defense strategy**. While **Hard Security** (cryptographic enforcement) ensures technical integrity, Atlas also uses **Soft Security** (social dynamics, gossip, and Proof of Service between nodes) for long-term robustness.
@@ -34,23 +148,3 @@ KeyPoW tier recognition is threshold-based (not exact-profile based):
 - Higher Argon2 settings are valid and map to the highest satisfied tier threshold.
 
 For Envelope writes, Node identity policy can enforce stricter minimum author tier via `acceptTier` (`citizen`/`titan`/`atlas`).
-
-### X-Atlas-Knowledge-Share
-
-Nodes MAY periodically ask clients for help with network discovery by returning this header:
-
-**Header**: `X-Atlas-Knowledge-Share: /nodes/announcements`
-
-**Example Behavior**:
-
-- Send once per hour on any response (first request within the hour window)
-- Applies to all endpoints (`/envelopes/*`, `/nodes/*`)
-
-```txt
-GET /envelopes?where={"authorPublicKey":"abc123"}
-Response:
-  X-Atlas-Knowledge-Share: /nodes/announcements
-  [{ "hash": "...", ... }]
-```
-
-Recipients SHOULD react to header by sharing their known nodes via POST to the advertised endpoint (e.g., `POST /nodes/announcements`).
