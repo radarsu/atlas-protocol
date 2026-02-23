@@ -1,9 +1,12 @@
 # Atlas Security Model
 
 ## Overview
+<img width="1315" height="935" alt="image" src="https://github.com/user-attachments/assets/63e0106a-ccbc-4153-a133-a749e33e364a" />
 
 The diagram describes a staged security pipeline for peer admission and participation inside the Atlas Network.  
-Peers move through progressively stricter validation layers: transport, protocol compliance, reputation, identity verification, and governance enforcement.
+Peers move through progressively stricter validation layers:
+1. **On protocol level** - transport and protocol compliance.
+2. **On order level** - trust and identity verification.
 
 ---
 
@@ -19,28 +22,15 @@ A new peer attempting to join the network.
 Peers are immediately rejected if any of the following fail:
 
 1. Invalid identity headers or signature  
-2. Invalid identity-based Proof-of-Work  
-   - Some peers may require TOTP time-windowed PoW  
-3. Invalid envelope/message format  
+2. Invalid identity-based Proof-of-Work
+   - Some peers may require TOTP time-windowed PoW
+3. Invalid envelope/message format
 
 Only peers passing transport validation proceed.
 
 ---
 
-## 3. Protocol Compliance Layer
-
-### Protocol-Compliant Peer
-
-The peer must conform to network protocol rules.
-
-### Soft Security
-
-Non-order-compliant peers may exist, but most rules overlap.  
-Peers failing protocol compliance are rejected before reputation or trust evaluation.
-
----
-
-## 4. Reputation Layer
+## 3. Trust Layer
 
 ### Zero-Reputation Peer
 
@@ -59,7 +49,7 @@ Peers that pass move forward.
 
 ---
 
-## 5. P2P Verification Layer
+## 4. P2P Verification Layer
 
 ### P2P Verified
 
@@ -67,7 +57,7 @@ Peer successfully passes decentralized verification checks.
 
 ---
 
-## 6. Identity Assurance Layer
+## 5. Identity Assurance Layer
 
 ### Formally Verified
 
@@ -81,7 +71,7 @@ Peer identity verified via trusted identity authority.
 
 ---
 
-## 7. Uniqueness Enforcement
+## 6. Uniqueness Enforcement
 
 ### One-Person-One-Account Enforced
 
@@ -89,7 +79,7 @@ The system enforces identity uniqueness before governance access.
 
 ---
 
-## 8. Governance Layer
+## 7. Governance Layer
 
 ### Order Governance
 
@@ -99,17 +89,17 @@ Only fully verified, uniqueness-enforced peers can participate in governance pro
 
 ## Security Model Summary
 
-The Atlas Security architecture combines:
+The Atlas Protocol + Order Security architecture combines:
 
-- Cryptographic transport validation  
-- Identity-bound Proof-of-Work  
-- Protocol compliance gating  
-- Quadratic peer distrust scoring  
-- Identity age sensitivity  
-- Decentralized P2P verification  
-- Formal identity verification  
-- Enforced uniqueness constraints  
-- Governance access control  
+- Cryptographic transport validation
+- Identity-bound Proof-of-Work
+- Protocol compliance gating
+- Quadratic peer distrust scoring
+- Identity age sensitivity
+- Decentralized P2P verification
+- Formal identity verification
+- Enforced uniqueness constraints
+- Governance access control
 
 
 # Atlas - Security
