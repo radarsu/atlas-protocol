@@ -50,12 +50,12 @@ It strictly validates transport authenticity and resource commitment.
 
 ---
 
-## Protocol Headers
+## Authentication Protocol Headers
 
 All network-compliant endpoints MUST use:
 
 ```
-Authorization: PublicKey <publicKey>
+X-Atlas-Identity: <publicKey>
 X-Atlas-PoW: <nonce>.<powHash>
 X-Atlas-Signature: t=<Method|UnixTimestampMs|PathWithQuery>; s=<Base64Signature>
 ```
