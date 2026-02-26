@@ -1,2 +1,2 @@
 ## Software Architecture
-<img width="1036" height="680" alt="image" src="https://github.com/user-attachments/assets/54393f44-d3d2-401b-88bc-b478a475e86b" />
+<img width="1032" height="720" alt="image" src="https://github.com/user-attachments/assets/9ece58dd-cbb4-4911-aab1-196782c106fe" />
