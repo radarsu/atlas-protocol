@@ -1,7 +1,7 @@
 # Atlas Protocol Security
 
 ## Overview
-<img width="1315" height="935" alt="image" src="https://github.com/user-attachments/assets/63e0106a-ccbc-4153-a133-a749e33e364a" />
+<img width="1438" height="941" alt="image" src="https://github.com/user-attachments/assets/43d2530a-18a2-42bc-8ae1-f23b1bebaf85" />
 
 Protocol-level security governs network admission at the transport layer.
 
