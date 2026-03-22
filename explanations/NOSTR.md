@@ -63,13 +63,20 @@ It **is** about:
 
 This is closer to **constitutional law** than to management. This is not perfect. But it makes the problem visible and contestable. We believe that is a major improvement over pretending it doesn't exist.
 
+## Nostr is not actually decentralized
+If a public figure were banned or shadowbanned by the 3 biggest public relays, their reach would immediately drop to ~10% of what they had before. Fiatjaf ran an experiment publishing notes to his own relay vs. popular relays and confirmed the reach disparity firsthand. This is because of lack of neutral, semi-automatic discovery & gossip layer, which Atlas introduces.
+
+The way Nostr currently works is that you subscribe to a small set of relays and expect to get everything from them. This tends to get very centralized very fast.
+
 ## The "NIP-Soup" Problem
 
 In Nostr, if you want to build a new feature (e.g., a "Task Manager" or "Medical Record"), you have two choices:
 1. **The Slow Way:** Propose a new NIP (Nostr Implementation Possibility), argue for months on GitHub, and hope other devs implement it.
 2. **The Fast Way:** Just pick a random kind number, define your own custom tags, and ship.
 
-In Atlas, we use Schema.org as a common "skeleton" of semantic meanings. Interpretations might differ, and compatibility may still be limited, but this gives us a strong foundation. As more developers use AI agents, accidental convergence becomes more likely. This matters because non-interoperable data and custom data structures cause lock-in and users lose power.
+Over-specification makes some NIPs hard to implement (ignored), while lack of specification would result in isolated silos and undermine the cross-client interoperability Nostr was meant to enable.
+
+In Atlas, we solve that by sound pattern, which is not undefined, but also not over-specified and behaves in similar, repeatable way for many use cases. We use Schema.org as a common "skeleton" of semantic meanings. Data structures are wrapped in signed envelopes, while specific field-validations and eligibility of data to be a subject of certain processes is defined in JSON-schema formats. Interpretations might differ, and compatibility may be limited, but this gives us a strong foundation. As more developers use AI agents, accidental convergence becomes more likely. This matters because non-interoperable data and custom data structures cause lock-in and users losing power.
 
 ## Private key and convenience
 
